@@ -1,1 +1,0 @@
-# odc-metricas-despliegue-seguro
