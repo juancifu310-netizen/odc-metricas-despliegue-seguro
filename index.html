@@ -1,1 +1,936 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ODC - Métricas para despliegue seguro</title>
+  <meta name="description" content="ODC: métricas de software, red/infra y seguridad para evaluación, monitoreo y toma de decisiones en despliegue seguro (DevSecOps)." />
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
+  <header class="topbar" role="banner">
+    <div class="topbar__left">
+      <div class="brand">
+        <div class="brand__title">ODC</div>
+        <div class="brand__subtitle">Métricas para despliegue seguro</div>
+      </div>
+    </div>
+
+    <div class="topbar__right">
+      <button class="btn btn--ghost" id="btnMenu" aria-haspopup="dialog" aria-controls="menuDialog">Menú</button>
+      <button class="btn btn--ghost" id="btnHelp" aria-haspopup="dialog" aria-controls="helpDialog">Ayuda</button>
+      <button class="btn btn--ghost" id="btnAudioToggle" aria-pressed="false">Audio: OFF</button>
+    </div>
+  </header>
+
+  <main id="contenido" class="layout" role="main">
+    <aside class="sidebar" aria-label="Navegación rápida">
+      <nav class="side-nav">
+        <button class="side-nav__item is-active" data-go="p01">1. Portada</button>
+        <button class="side-nav__item" data-go="p02">2. REA</button>
+        <button class="side-nav__item" data-go="p03">3. Población</button>
+        <button class="side-nav__item" data-go="p04">4. Menú</button>
+        <div class="side-nav__sep">Módulos</div>
+        <button class="side-nav__item" data-go="m01">M1. Problema</button>
+        <button class="side-nav__item" data-go="m02">M2. Taxonomía</button>
+        <button class="side-nav__item" data-go="m03">M3. Software</button>
+        <button class="side-nav__item" data-go="m04">M4. Red/Infra</button>
+        <button class="side-nav__item" data-go="m05">M5. Seguridad</button>
+        <button class="side-nav__item" data-go="m06">M6. Umbrales</button>
+        <button class="side-nav__item" data-go="m07">M7. Decisiones</button>
+        <button class="side-nav__item" data-go="m08">M8. Buenas prácticas</button>
+        <div class="side-nav__sep">Cierre</div>
+        <button class="side-nav__item" data-go="p13">Evaluación final</button>
+        <button class="side-nav__item" data-go="p14">Conclusión</button>
+        <button class="side-nav__item" data-go="p15">Referencias</button>
+        <button class="side-nav__item" data-go="p16">Créditos y licencia</button>
+      </nav>
+    </aside>
+
+    <section class="content">
+      <div class="progress" aria-label="Progreso">
+        <div class="progress__bar" id="progressBar" style="width: 0%"></div>
+      </div>
+
+      <!-- ====== P01 Portada ====== -->
+      <article class="screen is-active" id="p01" data-title="Portada">
+        <div class="card hero">
+          <h1>Métricas para despliegue seguro</h1>
+          <p class="lead">
+            Aprende a seleccionar métricas accionables de <strong>software</strong>, <strong>red/infraestructura</strong> y <strong>seguridad</strong>
+            para evaluar, monitorear y tomar decisiones de despliegue con enfoque DevSecOps.
+          </p>
+
+          <div class="cta-row">
+            <button class="btn" data-go="p02">Iniciar</button>
+            <button class="btn btn--ghost" data-open="helpDialog">¿Cómo se usa?</button>
+          </div>
+
+          <div class="mini-grid">
+            <div class="pill">8 módulos</div>
+            <div class="pill">1 actividad por módulo</div>
+            <div class="pill">Evaluación final</div>
+            <div class="pill">Accesible (transcripción)</div>
+          </div>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <h2>Avatar (audio + transcripción)</h2>
+            <div class="avatar__controls">
+              <audio id="audio_p01" preload="none" src="assets/audio/p01.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_p01">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript" id="tx_p01">
+            En este recurso vas a construir un tablero mínimo de métricas para despliegue seguro.
+            No necesitas memorizar listas: necesitas entender qué métrica sirve para qué decisión.
+            Pulsa Iniciar o abre el Menú para ir directo a un módulo.
+          </p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" disabled>← Anterior</button>
+          <button class="btn" data-go="p02">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== P02 REA ====== -->
+      <article class="screen" id="p02" data-title="REA">
+        <div class="card">
+          <h2>Resultado Esperado de Aprendizaje (REA)</h2>
+          <p>
+            Al finalizar, el estudiante <strong>diseña</strong> un tablero mínimo de métricas (software, red/infra y seguridad) para despliegue seguro,
+            definiendo <strong>umbrales de decisión</strong> y justificando su selección, evidenciado por:
+          </p>
+          <ul>
+            <li>Un tablero con mínimo <strong>12 métricas</strong> clasificadas.</li>
+            <li><strong>6 umbrales/gates</strong> de decisión definidos.</li>
+            <li><strong>80% de acierto</strong> en la evaluación final.</li>
+          </ul>
+
+          <button class="btn btn--ghost" data-info="rea">+Info: cómo escribir REA</button>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <h2>Avatar</h2>
+            <div class="avatar__controls">
+              <audio id="audio_p02" preload="none" src="assets/audio/p02.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_p02">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript" id="tx_p02">
+            Tu meta no es “saber métricas”, es poder usarlas para decidir: liberar o detener, priorizar o corregir,
+            alertar o investigar. En cada módulo harás una actividad corta con retroalimentación.
+          </p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="p01">← Anterior</button>
+          <button class="btn" data-go="p03">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== P03 Población ====== -->
+      <article class="screen" id="p03" data-title="Población objetivo">
+        <div class="card">
+          <h2>Población objetivo</h2>
+          <p>
+            Este ODC está dirigido a <strong>estudiantes</strong> de ingeniería de software, QA y DevOps en formación que participen en proyectos con CI/CD
+            y necesiten definir métricas para <strong>liberar</strong>, <strong>monitorear</strong> y <strong>reducir riesgos</strong>.
+          </p>
+
+          <div class="callout">
+            Consejo: si un concepto no te suena, usa los botones <strong>+Info</strong>.
+          </div>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <h2>Avatar</h2>
+            <div class="avatar__controls">
+              <audio id="audio_p03" preload="none" src="assets/audio/p03.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_p03">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript" id="tx_p03">
+            Si ya conoces CI/CD, perfecto. Si no, igual puedes seguir: te doy definiciones cortas en los botones +Info
+            para que no te pierdas.
+          </p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="p02">← Anterior</button>
+          <button class="btn" data-go="p04">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== P04 Menú ====== -->
+      <article class="screen" id="p04" data-title="Menú">
+        <div class="card">
+          <h2>Menú navegable</h2>
+          <p>
+            Puedes seguir el orden sugerido o entrar a un módulo específico. Usa los botones para avanzar, retroceder o volver al menú.
+          </p>
+
+          <div class="grid">
+            <button class="btn btn--ghost" data-go="m01">M1. Problema</button>
+            <button class="btn btn--ghost" data-go="m02">M2. Taxonomía</button>
+            <button class="btn btn--ghost" data-go="m03">M3. Software</button>
+            <button class="btn btn--ghost" data-go="m04">M4. Red/Infra</button>
+            <button class="btn btn--ghost" data-go="m05">M5. Seguridad</button>
+            <button class="btn btn--ghost" data-go="m06">M6. Umbrales</button>
+            <button class="btn btn--ghost" data-go="m07">M7. Decisiones</button>
+            <button class="btn btn--ghost" data-go="m08">M8. Buenas prácticas</button>
+          </div>
+
+          <div class="grid grid--2">
+            <button class="btn" data-go="p13">Ir a evaluación final</button>
+            <button class="btn btn--ghost" data-go="p15">Ver referencias</button>
+          </div>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <h2>Avatar</h2>
+            <div class="avatar__controls">
+              <audio id="audio_p04" preload="none" src="assets/audio/p04.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_p04">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript" id="tx_p04">
+            Puedes seguir el flujo completo o saltar por temas. Si te equivocas en una actividad,
+            la retroalimentación te explica exactamente qué ajustar.
+          </p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="p03">← Anterior</button>
+          <button class="btn" data-go="m01">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== M01 ====== -->
+      <article class="screen" id="m01" data-title="M1. Problema y evidencia">
+        <div class="card">
+          <h2>M1. Problema y evidencia: medir para decidir</h2>
+          <p>
+            En despliegues seguros, medir “por medir” no sirve. Una métrica solo aporta si se conecta con una decisión:
+            <strong>liberar</strong>, <strong>bloquear</strong>, <strong>priorizar</strong> o <strong>investigar</strong>.
+            Los proyectos fallan cuando mezclan métricas de calidad del código con métricas operativas y seguridad sin reglas claras:
+            se ignoran señales críticas o se crean alertas inútiles. Aquí conviertes métricas en señales accionables.
+          </p>
+
+          <div class="btn-row">
+            <button class="btn btn--ghost" data-info="metricaIndicador">+Info: Métrica vs indicador</button>
+            <button class="btn btn--ghost" data-info="gate">+Info: Qué es un gate</button>
+          </div>
+
+          <h3>Actividad (V/F)</h3>
+          <form class="quiz" data-quiz="m01_vf">
+            <div class="q">
+              <p>1) Si sube la latencia, siempre debo detener el despliegue.</p>
+              <label><input type="radio" name="q1" value="V"> Verdadero</label>
+              <label><input type="radio" name="q1" value="F"> Falso</label>
+              <div class="feedback" data-fb="q1"></div>
+            </div>
+            <div class="q">
+              <p>2) Una métrica sin umbral difícilmente guía una decisión.</p>
+              <label><input type="radio" name="q2" value="V"> Verdadero</label>
+              <label><input type="radio" name="q2" value="F"> Falso</label>
+              <div class="feedback" data-fb="q2"></div>
+            </div>
+            <div class="q">
+              <p>3) Cobertura de pruebas alta garantiza ausencia de fallos.</p>
+              <label><input type="radio" name="q3" value="V"> Verdadero</label>
+              <label><input type="radio" name="q3" value="F"> Falso</label>
+              <div class="feedback" data-fb="q3"></div>
+            </div>
+            <button class="btn" type="button" data-check="m01_vf">Ver retroalimentación</button>
+          </form>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <h2>Avatar</h2>
+            <div class="avatar__controls">
+              <audio id="audio_m01" preload="none" src="assets/audio/m01.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m01">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript" id="tx_m01">
+            Tu objetivo es amarrar métricas a decisiones. Piensa en el tablero como un semáforo con reglas,
+            no como un reporte. Después de responder, revisa la retro para entender por qué.
+          </p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="p04">← Menú</button>
+          <button class="btn" data-go="m02">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== M02 ====== -->
+      <article class="screen" id="m02" data-title="M2. Taxonomía de métricas">
+        <div class="card">
+          <h2>M2. Taxonomía: software, red/infra y seguridad</h2>
+          <p>
+            Para despliegue seguro necesitas tres capas: (1) métricas de <strong>software</strong>, (2) métricas de <strong>red/infra/servicio</strong> y
+            (3) indicadores de <strong>seguridad</strong>. El error típico es elegir solo una capa.
+            Si ignoras infra, liberas código “bien” que cae por latencia. Si ignoras seguridad, despliegas rápido con riesgo alto.
+          </p>
+
+          <h3>Actividad (clasificación)</h3>
+          <p class="muted">Arrastra cada elemento a su categoría.</p>
+
+          <div class="dnd">
+            <div class="dnd__items" aria-label="Elementos a clasificar">
+              <div class="chip" draggable="true">defect density</div>
+              <div class="chip" draggable="true">cyclomatic complexity</div>
+              <div class="chip" draggable="true">test coverage</div>
+              <div class="chip" draggable="true">code smells</div>
+              <div class="chip" draggable="true">latency p95</div>
+              <div class="chip" draggable="true">throughput</div>
+              <div class="chip" draggable="true">jitter</div>
+              <div class="chip" draggable="true">packet loss</div>
+              <div class="chip" draggable="true">vuln critical count</div>
+              <div class="chip" draggable="true">mean time to patch</div>
+              <div class="chip" draggable="true">risk score</div>
+              <div class="chip" draggable="true">security gate pass rate</div>
+            </div>
+
+            <div class="dnd__zones">
+              <div class="dropzone" data-zone="software">
+                <h4>Software</h4>
+                <div class="dropzone__body"></div>
+              </div>
+              <div class="dropzone" data-zone="infra">
+                <h4>Red/Infra</h4>
+                <div class="dropzone__body"></div>
+              </div>
+              <div class="dropzone" data-zone="seguridad">
+                <h4>Seguridad</h4>
+                <div class="dropzone__body"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn" type="button" id="checkDnd">Validar clasificación</button>
+            <div class="feedback" id="dndFeedback"></div>
+          </div>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <h2>Avatar</h2>
+            <div class="avatar__controls">
+              <audio id="audio_m02" preload="none" src="assets/audio/m02.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m02">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript" id="tx_m02">
+            La clave es equilibrio. Un tablero mínimo siempre toca las tres capas. Si te falta una,
+            tus decisiones quedan ciegas por algún lado: calidad, operación o riesgo.
+          </p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="m01">← Anterior</button>
+          <button class="btn" data-go="m03">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== M03 ====== -->
+      <article class="screen" id="m03" data-title="M3. Métricas de software">
+        <div class="card">
+          <h2>M3. Métricas de software: señales de calidad</h2>
+          <p>
+            Las métricas de software deben apoyar decisiones: ¿está listo para liberar? ¿qué corregir primero?
+            En despliegue seguro importan defectos, mantenibilidad y robustez de pruebas: defect density, maintainability index,
+            complejidad, code smells, cobertura y fallos en pruebas. Evita métricas vanidosas: si una métrica no cambia una decisión,
+            no debería estar en tu tablero mínimo.
+          </p>
+
+          <div class="btn-row">
+            <button class="btn btn--ghost" data-info="mi">+Info: Maintainability Index</button>
+            <button class="btn btn--ghost" data-info="smells">+Info: Code smells</button>
+          </div>
+
+          <h3>Actividad (selección múltiple)</h3>
+          <p class="muted">Caso: “El build pasa, pero hubo cambios grandes en un módulo crítico”. Elige 3 métricas para decidir.</p>
+
+          <form class="quiz" data-quiz="m03_mc">
+            <div class="q">
+              <label><input type="checkbox" name="a" value="A"> A) Cyclomatic complexity</label><br/>
+              <label><input type="checkbox" name="a" value="B"> B) Test coverage del módulo</label><br/>
+              <label><input type="checkbox" name="a" value="C"> C) Likes en el repo</label><br/>
+              <label><input type="checkbox" name="a" value="D"> D) Code smells en el módulo</label><br/>
+              <label><input type="checkbox" name="a" value="E"> E) Número total de líneas del proyecto</label>
+              <div class="feedback" data-fb="m03"></div>
+            </div>
+            <button class="btn" type="button" data-check="m03_mc">Ver retroalimentación</button>
+          </form>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <h2>Avatar</h2>
+            <div class="avatar__controls">
+              <audio id="audio_m03" preload="none" src="assets/audio/m03.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m03">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript" id="tx_m03">
+            En decisiones de release no miras “popularidad” del proyecto: miras riesgo del cambio.
+            Por eso priorizas complejidad, cobertura del módulo afectado y señales de mantenibilidad.
+          </p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="m02">← Anterior</button>
+          <button class="btn" data-go="m04">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== M04 ====== -->
+      <article class="screen" id="m04" data-title="M4. Red/Infra y SRE">
+        <div class="card">
+          <h2>M4. Métricas de red/infra: SLI/SLO para operación</h2>
+          <p>
+            En producción, el usuario siente latencia, errores y caídas, no “calidad del código”. Por eso se usan métricas operativas:
+            latencia p95/p99, throughput, jitter, packet loss y disponibilidad. Estas métricas se conectan con SLI/SLO:
+            el SLO es el compromiso (“p95 &lt; X ms”), y el SLI es lo que mides. Para decidir, compara contra el baseline y el impacto.
+          </p>
+
+          <button class="btn btn--ghost" data-info="slo">+Info: SLI vs SLO</button>
+
+          <h3>Actividad (ordenar)</h3>
+          <p class="muted">Para un servicio transaccional, ordena de más crítico a menos crítico:</p>
+
+          <form class="quiz" data-quiz="m04_order">
+            <label>1) <select name="o1">
+              <option value="">Selecciona…</option>
+              <option>Disponibilidad</option><option>Latencia p95</option><option>Packet loss</option><option>Throughput</option>
+            </select></label><br/>
+            <label>2) <select name="o2">
+              <option value="">Selecciona…</option>
+              <option>Disponibilidad</option><option>Latencia p95</option><option>Packet loss</option><option>Throughput</option>
+            </select></label><br/>
+            <label>3) <select name="o3">
+              <option value="">Selecciona…</option>
+              <option>Disponibilidad</option><option>Latencia p95</option><option>Packet loss</option><option>Throughput</option>
+            </select></label><br/>
+            <label>4) <select name="o4">
+              <option value="">Selecciona…</option>
+              <option>Disponibilidad</option><option>Latencia p95</option><option>Packet loss</option><option>Throughput</option>
+            </select></label>
+
+            <div class="feedback" data-fb="m04"></div>
+            <button class="btn" type="button" data-check="m04_order">Ver retroalimentación</button>
+          </form>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <h2>Avatar</h2>
+            <div class="avatar__controls">
+              <audio id="audio_m04" preload="none" src="assets/audio/m04.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m04">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript" id="tx_m04">
+            Operación y despliegue se conectan con SLOs. Si el servicio no cumple, no importa que el build haya pasado:
+            debes frenar o mitigar. Las métricas operativas cierran el ciclo.
+          </p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="m03">← Anterior</button>
+          <button class="btn" data-go="m05">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== M05 ====== -->
+      <article class="screen" id="m05" data-title="M5. Seguridad en CI/CD">
+        <div class="card">
+          <h2>M5. Indicadores de seguridad: riesgo controlable</h2>
+          <p>
+            Despliegue seguro implica medir seguridad en el pipeline. Indicadores típicos: vulnerabilidades críticas/altas abiertas,
+            tiempo medio de corrección, severidad ponderada, hallazgos por etapa (build/test/deploy) y cumplimiento de gates
+            (“0 críticas antes de deploy”). Lo importante no es contar hallazgos: es convertirlos en reglas que bloquean, alertan o exigen mitigación.
+          </p>
+
+          <h3>Actividad (asignar por etapa)</h3>
+          <p class="muted">Selecciona la etapa más adecuada para cada control:</p>
+
+          <form class="quiz" data-quiz="m05_map">
+            <div class="q">
+              <label>SAST:
+                <select name="sast">
+                  <option value="">Selecciona…</option>
+                  <option value="build">Build</option>
+                  <option value="test">Test</option>
+                  <option value="deploy">Deploy</option>
+                </select>
+              </label>
+            </div>
+            <div class="q">
+              <label>Escaneo de dependencias:
+                <select name="deps">
+                  <option value="">Selecciona…</option>
+                  <option value="build">Build</option>
+                  <option value="test">Test</option>
+                  <option value="deploy">Deploy</option>
+                </select>
+              </label>
+            </div>
+            <div class="q">
+              <label>DAST:
+                <select name="dast">
+                  <option value="">Selecciona…</option>
+                  <option value="build">Build</option>
+                  <option value="test">Test</option>
+                  <option value="deploy">Deploy</option>
+                </select>
+              </label>
+            </div>
+            <div class="q">
+              <label>Análisis de contenedores:
+                <select name="cont">
+                  <option value="">Selecciona…</option>
+                  <option value="build">Build</option>
+                  <option value="test">Test</option>
+                  <option value="deploy">Deploy</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="feedback" data-fb="m05"></div>
+            <button class="btn" type="button" data-check="m05_map">Ver retroalimentación</button>
+          </form>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <h2>Avatar</h2>
+            <div class="avatar__controls">
+              <audio id="audio_m05" preload="none" src="assets/audio/m05.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m05">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript" id="tx_m05">
+            La seguridad efectiva no se “mira al final”. Se instrumenta por etapas y se convierte en gates claros.
+            Si una vulnerabilidad crítica bloquea, debe bloquear siempre: consistencia.
+          </p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="m04">← Anterior</button>
+          <button class="btn" data-go="m06">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== M06 ====== -->
+      <article class="screen" id="m06" data-title="M6. Umbrales y gates">
+        <div class="card">
+          <h2>M6. Umbrales y gates: reglas de decisión</h2>
+          <p>
+            Un umbral transforma una métrica en acción. Ejemplos: “no desplegar si vuln críticas &gt; 0”; “alertar si latencia p95 sube &gt; 15%”;
+            “bloquear si fallan pruebas”; “revisar si complejidad crece &gt; X”. Los umbrales deben ser medibles, accionables y revisables,
+            alineados con SLO del servicio. Evita umbrales arbitrarios: justifica por riesgo o experiencia de usuario.
+          </p>
+
+          <button class="btn btn--ghost" data-info="umbral">+Info: cómo escribir un umbral</button>
+
+          <h3>Actividad (escribe 4 umbrales)</h3>
+          <p class="muted">Redacta 1 umbral por capa: Software, Red/Infra, Seguridad, Pruebas.</p>
+
+          <div class="grid grid--2">
+            <label>Software
+              <input class="input" id="th_sw" placeholder="Ej: Revisar si complexity > X en módulo crítico" />
+            </label>
+            <label>Red/Infra
+              <input class="input" id="th_infra" placeholder="Ej: Alertar si latencia p95 > 15% vs baseline" />
+            </label>
+            <label>Seguridad
+              <input class="input" id="th_sec" placeholder="Ej: Bloquear si vuln críticas > 0" />
+            </label>
+            <label>Pruebas
+              <input class="input" id="th_test" placeholder="Ej: Bloquear si tests fallan en pipeline" />
+            </label>
+          </div>
+
+          <button class="btn" id="checkThresholds" type="button">Validar umbrales</button>
+          <div class="feedback" id="thFeedback"></div>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <h2>Avatar</h2>
+            <div class="avatar__controls">
+              <audio id="audio_m06" preload="none" src="assets/audio/m06.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m06">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript" id="tx_m06">
+            Un buen umbral siempre tiene: métrica, operador, valor y acción. Si no puedes ejecutar la acción,
+            no es umbral: es un dato suelto.
+          </p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="m05">← Anterior</button>
+          <button class="btn" data-go="m07">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== M07 ====== -->
+      <article class="screen" id="m07" data-title="M7. Tablero y decisiones">
+        <div class="card">
+          <h2>M7. Tablero mínimo: decidir liberar o bloquear</h2>
+          <p>
+            Un tablero mínimo integra señales de calidad (software), operación (red/infra) y riesgo (seguridad).
+            La decisión se vuelve consistente cuando defines: qué bloquea, qué alerta y qué se acepta con mitigación.
+            Practica con escenarios tipo release/no release: tu respuesta debe basarse en gates y umbrales.
+          </p>
+
+          <h3>Actividad (3 escenarios)</h3>
+
+          <div class="case">
+            <h4>Escenario A</h4>
+            <p>Tests OK. Vuln críticas = 0. Latencia p95 = +3%.</p>
+            <select class="input" id="caseA">
+              <option value="">Decisión…</option>
+              <option value="liberar">Liberar</option>
+              <option value="bloquear">Bloquear</option>
+            </select>
+            <div class="feedback" id="fbA"></div>
+          </div>
+
+          <div class="case">
+            <h4>Escenario B</h4>
+            <p>Tests OK. Vuln críticas = 2. Latencia estable.</p>
+            <select class="input" id="caseB">
+              <option value="">Decisión…</option>
+              <option value="liberar">Liberar</option>
+              <option value="bloquear">Bloquear</option>
+            </select>
+            <div class="feedback" id="fbB"></div>
+          </div>
+
+          <div class="case">
+            <h4>Escenario C</h4>
+            <p>Tests fallan. Vuln críticas = 0. Latencia = +1%.</p>
+            <select class="input" id="caseC">
+              <option value="">Decisión…</option>
+              <option value="liberar">Liberar</option>
+              <option value="bloquear">Bloquear</option>
+            </select>
+            <div class="feedback" id="fbC"></div>
+          </div>
+
+          <button class="btn" id="checkCases" type="button">Ver retroalimentación</button>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <h2>Avatar</h2>
+            <div class="avatar__controls">
+              <audio id="audio_m07" preload="none" src="assets/audio/m07.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m07">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript" id="tx_m07">
+            Las decisiones se priorizan por gates. Seguridad crítica y pruebas fallidas bloquean.
+            Variaciones menores de latencia se monitorean si el SLO lo permite.
+          </p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="m06">← Anterior</button>
+          <button class="btn" data-go="m08">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== M08 ====== -->
+      <article class="screen" id="m08" data-title="M8. Buenas prácticas">
+        <div class="card">
+          <h2>M8. Buenas prácticas y errores comunes</h2>
+          <p>
+            Errores comunes: métricas vanidosas (sin decisión), demasiadas métricas sin foco, umbrales sin justificación,
+            falta de trazabilidad (no se sabe de dónde sale el número) y ausencia de revisión periódica.
+            Buenas prácticas: pocas métricas pero accionables, automatizar recolección, usar SLI/SLO, integrar seguridad al pipeline
+            y registrar decisiones para aprender (postmortems).
+          </p>
+
+          <h3>Actividad (checklist)</h3>
+          <p class="muted">Marca los criterios que sí son de un buen sistema de métricas (mínimo 6).</p>
+
+          <form class="quiz" data-quiz="m08_check">
+            <label><input type="checkbox" name="c" value="accionables"> Son accionables (cambian decisiones)</label><br/>
+            <label><input type="checkbox" name="c" value="trazables"> Son trazables (fuente y cálculo claros)</label><br/>
+            <label><input type="checkbox" name="c" value="umbrales"> Tienen umbrales/gates definidos</label><br/>
+            <label><input type="checkbox" name="c" value="rev"> Se revisan periódicamente</label><br/>
+            <label><input type="checkbox" name="c" value="vanity"> Incluyen likes y estrellas como KPI principal</label><br/>
+            <label><input type="checkbox" name="c" value="automat"> Se recolectan de forma automatizada</label><br/>
+            <label><input type="checkbox" name="c" value="slo"> Están alineadas a SLO/objetivos</label><br/>
+            <label><input type="checkbox" name="c" value="ruido"> Generan alertas sin criterio para “ver si pasa algo”</label>
+
+            <div class="feedback" data-fb="m08"></div>
+            <button class="btn" type="button" data-check="m08_check">Ver retroalimentación</button>
+          </form>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <h2>Avatar</h2>
+            <div class="avatar__controls">
+              <audio id="audio_m08" preload="none" src="assets/audio/m08.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m08">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript" id="tx_m08">
+            Si una métrica no cambia una decisión, estorba. El tablero mínimo es pequeño, accionable,
+            y con umbrales claros. Menos ruido, más control.
+          </p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="m07">← Anterior</button>
+          <button class="btn" data-go="p13">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== P13 Evaluación final ====== -->
+      <article class="screen" id="p13" data-title="Evaluación final">
+        <div class="card">
+          <h2>Evaluación final (8 ítems)</h2>
+          <p class="muted">Debes lograr 80% o más. Cada respuesta tiene retroalimentación.</p>
+
+          <form class="quiz" data-quiz="final">
+            <div class="q">
+              <p>1) “Latencia p95” es una métrica de:</p>
+              <label><input type="radio" name="f1" value="sw"> Software</label>
+              <label><input type="radio" name="f1" value="infra"> Red/Infra</label>
+              <label><input type="radio" name="f1" value="sec"> Seguridad</label>
+              <div class="feedback" data-fb="f1"></div>
+            </div>
+
+            <div class="q">
+              <p>2) “Code smells” corresponde a:</p>
+              <label><input type="radio" name="f2" value="sw"> Software</label>
+              <label><input type="radio" name="f2" value="infra"> Red/Infra</label>
+              <label><input type="radio" name="f2" value="sec"> Seguridad</label>
+              <div class="feedback" data-fb="f2"></div>
+            </div>
+
+            <div class="q">
+              <p>3) “Vulnerabilidades críticas abiertas” corresponde a:</p>
+              <label><input type="radio" name="f3" value="sw"> Software</label>
+              <label><input type="radio" name="f3" value="infra"> Red/Infra</label>
+              <label><input type="radio" name="f3" value="sec"> Seguridad</label>
+              <div class="feedback" data-fb="f3"></div>
+            </div>
+
+            <div class="q">
+              <p>4) ¿Cuál bloquea el despliegue?</p>
+              <label><input type="radio" name="f4" value="likes"> Likes bajos</label>
+              <label><input type="radio" name="f4" value="tests"> Fallan pruebas</label>
+              <label><input type="radio" name="f4" value="lines"> Muchas líneas</label>
+              <div class="feedback" data-fb="f4"></div>
+            </div>
+
+            <div class="q">
+              <p>5) Elige el umbral correcto (accionable):</p>
+              <label><input type="radio" name="f5" value="a"> “Latencia p95 es alta”</label>
+              <label><input type="radio" name="f5" value="b"> “Alertar si latencia p95 &gt; 15% vs baseline”</label>
+              <label><input type="radio" name="f5" value="c"> “El sistema se siente lento”</label>
+              <div class="feedback" data-fb="f5"></div>
+            </div>
+
+            <div class="q">
+              <p>6) ¿Cuál es una métrica vanity?</p>
+              <label><input type="radio" name="f6" value="likes"> Likes/estrellas</label>
+              <label><input type="radio" name="f6" value="vuln"> Vuln críticas</label>
+              <label><input type="radio" name="f6" value="lat"> Latencia p95</label>
+              <div class="feedback" data-fb="f6"></div>
+            </div>
+
+            <div class="q">
+              <p>7) Caso: Vuln críticas = 1, lo demás OK. Decisión:</p>
+              <label><input type="radio" name="f7" value="liberar"> Liberar</label>
+              <label><input type="radio" name="f7" value="bloquear"> Bloquear</label>
+              <div class="feedback" data-fb="f7"></div>
+            </div>
+
+            <div class="q">
+              <p>8) Selecciona 3 métricas mínimas para release (elige 3):</p>
+              <label><input type="checkbox" name="f8" value="cov"> Cobertura de pruebas</label><br/>
+              <label><input type="checkbox" name="f8" value="lat"> Latencia p95</label><br/>
+              <label><input type="checkbox" name="f8" value="vuln"> Vuln críticas</label><br/>
+              <label><input type="checkbox" name="f8" value="likes"> Likes</label><br/>
+              <label><input type="checkbox" name="f8" value="loc"> Líneas de código</label>
+              <div class="feedback" data-fb="f8"></div>
+            </div>
+
+            <button class="btn" type="button" data-check="final">Calificar</button>
+            <div class="score" id="finalScore"></div>
+          </form>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="m08">← Anterior</button>
+          <button class="btn" data-go="p14">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== P14 Conclusión ====== -->
+      <article class="screen" id="p14" data-title="Conclusión">
+        <div class="card">
+          <h2>Conclusión</h2>
+          <p>
+            Aprendiste a clasificar métricas, definir umbrales y aplicar gates para tomar decisiones de despliegue seguro.
+            El siguiente paso es construir tu tablero mínimo con 12 métricas y 6 gates, y probarlo con escenarios reales
+            de liberación. Revisa tus métricas cada sprint: elimina las que no cambian decisiones y ajusta umbrales según evidencia.
+          </p>
+
+          <h3>Checklist final</h3>
+          <ul>
+            <li>12 métricas clasificadas (software/infra/seguridad).</li>
+            <li>6 gates definidos (bloqueo/alerta/revisión).</li>
+            <li>3 escenarios de decisión evaluados.</li>
+            <li>1 mejora propuesta al tablero (reducción de ruido o mejor trazabilidad).</li>
+          </ul>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="p13">← Anterior</button>
+          <button class="btn" data-go="p15">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== P15 Referencias ====== -->
+      <article class="screen" id="p15" data-title="Referencias">
+        <div class="card">
+          <h2>Referencias (APA 7)</h2>
+          <p class="muted">
+            Debes reemplazar/ajustar esta lista con tus ≥20 referencias reales (incluye artículos, sitios y recursos visuales usados).
+          </p>
+
+          <ol class="refs">
+            <li>Forsgren, N., Humble, J., & Kim, G. (2018). <em>Accelerate</em>. IT Revolution. (Para contexto DORA).</li>
+            <li>Google. (2023). <em>Site Reliability Engineering</em> (SRE). (Para SLI/SLO).</li>
+            <li>OWASP. (2021–2026). <em>OWASP resources on DevSecOps and application security</em>.</li>
+            <li>ISO/IEC. (2011). <em>ISO/IEC 25010: Systems and software engineering—SQuaRE—System and software quality models</em>.</li>
+            <li>Incluye aquí las referencias de tu PRISMA (mínimo 20).</li>
+          </ol>
+
+          <div class="callout">
+            Tip: agrega también referencias de imágenes/íconos/audio/video con su licencia.
+          </div>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="p14">← Anterior</button>
+          <button class="btn" data-go="p16">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== P16 Créditos y licencia ====== -->
+      <article class="screen" id="p16" data-title="Créditos y licencia">
+        <div class="card">
+          <h2>Créditos y licencia</h2>
+
+          <h3>Créditos</h3>
+          <ul>
+            <li><strong>Autoría:</strong> (Tu nombre)</li>
+            <li><strong>Diseño del ODC:</strong> (Tu nombre)</li>
+            <li><strong>Guion y voz:</strong> (Tu nombre / TTS)</li>
+            <li><strong>Edición:</strong> (Tu nombre)</li>
+            <li><strong>Recursos (imágenes/íconos/audio):</strong> listar con TASL (Título–Autor–Source–Licencia)</li>
+          </ul>
+
+          <h3>Licencia del ODC</h3>
+          <p>
+            Este ODC se publica bajo licencia <strong>Creative Commons Attribution 4.0 (CC BY 4.0)</strong>.
+            Puedes reutilizarlo y adaptarlo con atribución.
+          </p>
+
+          <h3>Accesibilidad</h3>
+          <ul>
+            <li>Transcripción visible en cada pantalla con audio.</li>
+            <li>Contraste alto y tipografía legible.</li>
+            <li>Navegación por teclado (Tab/Enter) en botones y formularios.</li>
+            <li>Texto alternativo (ALT) obligatorio si agregas imágenes.</li>
+          </ul>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="p15">← Anterior</button>
+          <button class="btn" data-go="p01">Volver al inicio</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- ====== Dialogs ====== -->
+  <dialog id="menuDialog" class="dialog">
+    <div class="dialog__head">
+      <h3>Menú</h3>
+      <button class="btn btn--ghost btn--sm" data-close="menuDialog">Cerrar</button>
+    </div>
+    <div class="dialog__body">
+      <div class="grid">
+        <button class="btn btn--ghost" data-go="p01" data-close="menuDialog">Portada</button>
+        <button class="btn btn--ghost" data-go="p02" data-close="menuDialog">REA</button>
+        <button class="btn btn--ghost" data-go="p03" data-close="menuDialog">Población</button>
+        <button class="btn btn--ghost" data-go="p04" data-close="menuDialog">Menú</button>
+
+        <button class="btn btn--ghost" data-go="m01" data-close="menuDialog">M1</button>
+        <button class="btn btn--ghost" data-go="m02" data-close="menuDialog">M2</button>
+        <button class="btn btn--ghost" data-go="m03" data-close="menuDialog">M3</button>
+        <button class="btn btn--ghost" data-go="m04" data-close="menuDialog">M4</button>
+        <button class="btn btn--ghost" data-go="m05" data-close="menuDialog">M5</button>
+        <button class="btn btn--ghost" data-go="m06" data-close="menuDialog">M6</button>
+        <button class="btn btn--ghost" data-go="m07" data-close="menuDialog">M7</button>
+        <button class="btn btn--ghost" data-go="m08" data-close="menuDialog">M8</button>
+
+        <button class="btn" data-go="p13" data-close="menuDialog">Evaluación</button>
+        <button class="btn btn--ghost" data-go="p14" data-close="menuDialog">Conclusión</button>
+        <button class="btn btn--ghost" data-go="p15" data-close="menuDialog">Referencias</button>
+        <button class="btn btn--ghost" data-go="p16" data-close="menuDialog">Créditos</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="helpDialog" class="dialog">
+    <div class="dialog__head">
+      <h3>Ayuda</h3>
+      <button class="btn btn--ghost btn--sm" data-close="helpDialog">Cerrar</button>
+    </div>
+    <div class="dialog__body">
+      <ol>
+        <li>Usa <strong>Menú</strong> para saltar a cualquier módulo.</li>
+        <li>En cada módulo, realiza la <strong>actividad</strong> y lee la retroalimentación.</li>
+        <li>Si activas el audio, usa Play/Pausa y revisa la <strong>transcripción</strong>.</li>
+        <li>Al final, realiza la evaluación. Meta: <strong>80%</strong> o más.</li>
+      </ol>
+      <p class="muted">Si agregas imágenes, recuerda ALT y licencia.</p>
+    </div>
+  </dialog>
+
+  <dialog id="infoDialog" class="dialog">
+    <div class="dialog__head">
+      <h3 id="infoTitle">+Info</h3>
+      <button class="btn btn--ghost btn--sm" data-close="infoDialog">Cerrar</button>
+    </div>
+    <div class="dialog__body" id="infoBody"></div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
