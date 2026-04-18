@@ -1,5 +1,5 @@
 /* ODC - Navegación + Actividades + Retro
-   Nota: los audios son opcionales. Si no existen los mp3, el sitio igual funciona.
+   Nota: si no existen los mp3 en assets/audio, el sitio igual funciona.
 */
 
 const screens = Array.from(document.querySelectorAll(".screen"));
@@ -81,24 +81,18 @@ const INFO = {
 // ===== Navegación =====
 function setActiveScreen(id) {
   screens.forEach(s => s.classList.toggle("is-active", s.id === id));
-
   sideItems.forEach(b => b.classList.toggle("is-active", b.dataset.go === id));
 
   const idx = screens.findIndex(s => s.id === id);
   const pct = Math.round(((idx + 1) / screens.length) * 100);
   progressBar.style.width = `${pct}%`;
 
-  if (globalAudioEnabled) {
-    // si hay audio en la pantalla, auto-play no (por navegador), pero queda listo
-  }
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 document.addEventListener("click", (e) => {
   const go = e.target.closest("[data-go]");
-  if (go) {
-    setActiveScreen(go.dataset.go);
-  }
+  if (go) setActiveScreen(go.dataset.go);
 
   const open = e.target.closest("[data-open]");
   if (open) {
@@ -124,13 +118,28 @@ document.addEventListener("click", (e) => {
     infoDialog.showModal();
   }
 
+  // ===== AUDIO: apaga otros + resalta avatar "hablando" =====
   const audioBtn = e.target.closest("[data-audio]");
   if (audioBtn) {
     const audioId = audioBtn.dataset.audio;
     const el = document.getElementById(audioId);
     if (!el) return;
-    if (el.paused) el.play().catch(()=>{});
-    else el.pause();
+
+    // Apaga otros audios
+    document.querySelectorAll("audio").forEach(a => { if (a !== el) a.pause(); });
+
+    // Quita resaltado de todos los avatares
+    document.querySelectorAll(".speaker__img").forEach(img => img.classList.remove("is-speaking"));
+
+    const speakerImg = audioBtn.closest(".avatar")?.querySelector(".speaker__img");
+
+    if (el.paused) {
+      el.play().catch(()=>{});
+      if (speakerImg) speakerImg.classList.add("is-speaking");
+    } else {
+      el.pause();
+      if (speakerImg) speakerImg.classList.remove("is-speaking");
+    }
   }
 });
 
@@ -185,7 +194,7 @@ function checkM03() {
     : "Incorrecto: prioriza complejidad (A), cobertura del módulo (B) y code smells (D). Likes y LOC no guían decisiones.";
 }
 
-// ===== M04 Order (simple expected order) =====
+// ===== M04 Order (expected order) =====
 function checkM04() {
   const form = document.querySelector('[data-quiz="m04_order"]');
   const o1 = form.querySelector('select[name="o1"]').value;
@@ -269,7 +278,6 @@ function checkCases() {
   const fbB = document.getElementById("fbB");
   const fbC = document.getElementById("fbC");
 
-  // Expected
   const expA = "liberar";
   const expB = "bloquear";
   const expC = "bloquear";
@@ -338,42 +346,34 @@ function checkFinal() {
     fb.textContent = msg;
   }
 
-  // 1
   const f1 = form.querySelector('input[name="f1"]:checked')?.value;
   if (f1 === "infra") { score++; setFb("f1",true,"Correcto: latencia p95 es operativa (red/infra/servicio)."); }
   else setFb("f1",false,"Incorrecto: latencia p95 pertenece a red/infra/servicio.");
 
-  // 2
   const f2 = form.querySelector('input[name="f2"]:checked')?.value;
   if (f2 === "sw") { score++; setFb("f2",true,"Correcto: code smells son señales de calidad de software."); }
   else setFb("f2",false,"Incorrecto: code smells corresponden a software.");
 
-  // 3
   const f3 = form.querySelector('input[name="f3"]:checked')?.value;
   if (f3 === "sec") { score++; setFb("f3",true,"Correcto: vulnerabilidades abiertas son seguridad."); }
   else setFb("f3",false,"Incorrecto: vulnerabilidades críticas abiertas son seguridad.");
 
-  // 4
   const f4 = form.querySelector('input[name="f4"]:checked')?.value;
   if (f4 === "tests") { score++; setFb("f4",true,"Correcto: pruebas fallidas bloquean el despliegue."); }
   else setFb("f4",false,"Incorrecto: el gate típico de bloqueo es fallar pruebas.");
 
-  // 5
   const f5 = form.querySelector('input[name="f5"]:checked')?.value;
   if (f5 === "b") { score++; setFb("f5",true,"Correcto: tiene métrica, umbral y acción (alerta)."); }
   else setFb("f5",false,"Incorrecto: el umbral debe ser medible y accionable.");
 
-  // 6
   const f6 = form.querySelector('input[name="f6"]:checked')?.value;
   if (f6 === "likes") { score++; setFb("f6",true,"Correcto: likes/estrellas es vanity."); }
   else setFb("f6",false,"Incorrecto: vanity típica es likes/estrellas.");
 
-  // 7
   const f7 = form.querySelector('input[name="f7"]:checked')?.value;
   if (f7 === "bloquear") { score++; setFb("f7",true,"Correcto: 1 vulnerabilidad crítica debe bloquear (gate de seguridad)."); }
   else setFb("f7",false,"Incorrecto: vulnerabilidad crítica bloquea.");
 
-  // 8 (3 selections)
   const f8 = Array.from(form.querySelectorAll('input[name="f8"]:checked')).map(x=>x.value).sort();
   const correct8 = ["cov","lat","vuln"];
   const ok8 = f8.length === 3 && f8.join(",") === correct8.join(",");
