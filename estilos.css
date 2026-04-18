@@ -185,8 +185,9 @@ body{
 .muted{color:var(--muted)}
 
 .avatar__head{
-  display:flex; justify-content:space-between; align-items:center; gap:10px;
+  display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
 }
+
 .transcript{
   margin:10px 0 0;
   color:var(--muted);
@@ -293,3 +294,27 @@ body{
   background: rgba(255,255,255,.03);
   color: var(--muted);
 }
+
+/* ===== Avatares visibles ===== */
+.speaker{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:10px;
+}
+
+.speaker__img{
+  width:56px;
+  height:56px;
+  border-radius:999px;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,.18);
+}
+
+.speaker__img.is-speaking{
+  border-color: rgba(124,240,200,.75);
+  box-shadow: 0 0 0 6px rgba(124,240,200,.12);
+}
+
+.speaker__name{font-weight:800}
+.speaker__role{color:var(--muted); font-size:13px}
