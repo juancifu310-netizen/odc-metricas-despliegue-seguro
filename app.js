@@ -14,6 +14,16 @@ const btnAudioToggle = document.getElementById("btnAudioToggle");
 
 let globalAudioEnabled = false;
 
+/* ✅ NUEVO: detener todo audio al navegar */
+function stopAllAudio() {
+  document.querySelectorAll("audio").forEach(a => {
+    a.pause();
+    try { a.currentTime = 0; } catch(e) {}
+  });
+  document.querySelectorAll(".speaker__img--big").forEach(img => img.classList.remove("is-speaking"));
+  document.querySelectorAll(".avatar").forEach(av => av.classList.remove("is-speaking"));
+}
+
 const INFO = {
   rea: {
     title: "Cómo escribir un REA",
@@ -29,39 +39,23 @@ const INFO = {
     body: `<p><strong>Métrica:</strong> valor medido (p. ej., latencia p95 = 220 ms).</p>
            <p><strong>Indicador:</strong> interpretación para actuar (p. ej., “incumple SLO, bloquear”).</p>`
   },
-  gate: {
-    title: "Qué es un gate",
-    body: `<p><strong>Gate:</strong> regla que habilita o bloquea una acción (por ejemplo, despliegue).</p>`
-  },
-  mi: {
-    title: "Maintainability Index",
-    body: `<p>Indicador compuesto para estimar mantenibilidad (relacionado con complejidad y otros factores).</p>`
-  },
-  smells: {
-    title: "Code smells",
-    body: `<p>Patrones de código que elevan el riesgo de mantenimiento (duplicación, métodos largos, alta complejidad).</p>`
-  },
-  slo: {
-    title: "SLI vs SLO",
-    body: `<p><strong>SLI</strong>: indicador medible (latencia, disponibilidad).</p>
-           <p><strong>SLO</strong>: objetivo/compromiso (p. ej., p95 &lt; 250 ms).</p>`
-  },
-  umbral: {
-    title: "Cómo escribir un umbral",
-    body: `<ul>
-            <li>Métrica + operador + valor + acción.</li>
-            <li>Ej: “Bloquear si vuln críticas &gt; 0”.</li>
-            <li>Ej: “Alertar si latencia p95 &gt; 15% vs baseline”.</li>
-          </ul>`
-  }
+  gate: { title: "Qué es un gate", body: `<p><strong>Gate:</strong> regla que habilita o bloquea una acción (por ejemplo, despliegue).</p>` },
+  mi: { title: "Maintainability Index", body: `<p>Indicador compuesto para estimar mantenibilidad (relacionado con complejidad y otros factores).</p>` },
+  smells: { title: "Code smells", body: `<p>Patrones de código que elevan el riesgo de mantenimiento (duplicación, métodos largos, alta complejidad).</p>` },
+  slo: { title: "SLI vs SLO", body: `<p><strong>SLI</strong>: indicador medible (latencia, disponibilidad).</p><p><strong>SLO</strong>: objetivo/compromiso (p. ej., p95 &lt; 250 ms).</p>` },
+  umbral: { title: "Cómo escribir un umbral", body: `<ul><li>Métrica + operador + valor + acción.</li><li>Ej: “Bloquear si vuln críticas &gt; 0”.</li><li>Ej: “Alertar si latencia p95 &gt; 15% vs baseline”.</li></ul>` }
 };
 
 function setActiveScreen(id) {
+  stopAllAudio(); // ✅ CORRECCIÓN solicitada: audio se detiene al cambiar de módulo/pantalla
+
   screens.forEach(s => s.classList.toggle("is-active", s.id === id));
   sideItems.forEach(b => b.classList.toggle("is-active", b.dataset.go === id));
+
   const idx = screens.findIndex(s => s.id === id);
   const pct = Math.round(((idx + 1) / screens.length) * 100);
   progressBar.style.width = `${pct}%`;
+
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -91,10 +85,10 @@ document.addEventListener("click", (e) => {
     const el = document.getElementById(audioId);
     if (!el) return;
 
-    // Pausa otros audios
+    // Apaga otros audios
     document.querySelectorAll("audio").forEach(a => { if (a !== el) a.pause(); });
 
-    // Quita animación de todos
+    // Limpia animación previa
     document.querySelectorAll(".speaker__img--big").forEach(img => img.classList.remove("is-speaking"));
     document.querySelectorAll(".avatar").forEach(av => av.classList.remove("is-speaking"));
 
@@ -105,7 +99,7 @@ document.addEventListener("click", (e) => {
       el.play().catch(()=>{});
       if (speakerImg) speakerImg.classList.add("is-speaking");
       if (avatarCard) avatarCard.classList.add("is-speaking");
-      // cuando termine, apaga animación
+
       el.onended = () => {
         if (speakerImg) speakerImg.classList.remove("is-speaking");
         if (avatarCard) avatarCard.classList.remove("is-speaking");
@@ -164,9 +158,7 @@ function checkM03() {
   if (chosen.length !== 3) { fb.className="feedback bad"; fb.textContent="Selecciona exactamente 3 opciones."; return; }
   const ok = chosen.join(",") === correct.join(",");
   fb.className="feedback " + (ok ? "ok":"bad");
-  fb.textContent = ok
-    ? "Correcto: complejidad, cobertura del módulo y smells son señales accionables."
-    : "Incorrecto: las correctas son A, B y D.";
+  fb.textContent = ok ? "Correcto." : "Incorrecto: las correctas son A, B y D.";
 }
 
 function checkM04() {
@@ -209,9 +201,7 @@ function checkM08() {
   const goodCount = chosen.filter(x=>good.includes(x)).length;
   const hasBad = chosen.some(x=>bad.includes(x));
   fb.className="feedback " + ((goodCount>=5 && !hasBad) ? "ok":"bad");
-  fb.textContent = (goodCount>=5 && !hasBad)
-    ? "Correcto."
-    : "Evita vanity/ruido y prioriza accionables, trazables, umbrales, automatización y SLO.";
+  fb.textContent = (goodCount>=5 && !hasBad) ? "Correcto." : "Evita vanity/ruido y prioriza accionables, trazables, umbrales, automatización y SLO.";
 }
 
 function checkFinal() {
