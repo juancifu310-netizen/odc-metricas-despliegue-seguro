@@ -258,7 +258,7 @@ body{
 
 .speaker__img--big{
   width:190px;
-  height:270px;     /* medio cuerpo visual */
+  height:270px;
   border-radius:18px;
   object-fit:cover;
   border:2px solid rgba(255,255,255,.18);
@@ -285,19 +285,15 @@ body{
   background: linear-gradient(180deg, var(--accent), var(--accent2));
 }
 
-/* Estado hablando: borde + movimiento + barras animadas */
+/* Estado hablando */
 .speaker__img--big.is-speaking{
   border-color: rgba(124,240,200,.75);
   box-shadow: 0 0 0 10px rgba(124,240,200,.12);
   animation: bob 900ms ease-in-out infinite;
 }
 
-.avatar.is-speaking .talk{
-  opacity:1;
-}
-.avatar.is-speaking .talk span{
-  animation: levels 600ms ease-in-out infinite;
-}
+.avatar.is-speaking .talk{opacity:1}
+.avatar.is-speaking .talk span{animation: levels 600ms ease-in-out infinite}
 .avatar.is-speaking .talk span:nth-child(2){animation-delay:120ms}
 .avatar.is-speaking .talk span:nth-child(3){animation-delay:240ms}
 
@@ -305,7 +301,6 @@ body{
   0%,100%{transform: translateY(0)}
   50%{transform: translateY(-3px)}
 }
-
 @keyframes levels{
   0%,100%{height:5px}
   50%{height:14px}
