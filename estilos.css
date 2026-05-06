@@ -5,8 +5,6 @@
   --border:rgba(255,255,255,.12);
   --accent:#57a6ff;
   --accent2:#7cf0c8;
-  --danger:#ff6b6b;
-  --ok:#7cf0c8;
   --shadow: 0 10px 30px rgba(0,0,0,.25);
   --radius: 16px;
   --radius2: 22px;
@@ -105,6 +103,7 @@ body{
 
 .hero h1{margin:0 0 10px; font-size:34px}
 .lead{color:var(--muted); line-height:1.5; font-size:16px}
+.muted{color:var(--muted)}
 
 .mini-grid{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
 .pill{
@@ -130,10 +129,7 @@ body{
 .btn--ghost:hover{background:rgba(255,255,255,.05)}
 .btn--sm{padding:7px 10px; border-radius:10px; font-weight:600; font-size:13px}
 
-.btn-row{display:flex; gap:10px; flex-wrap:wrap; margin:10px 0}
-.cta-row{display:flex; gap:10px; flex-wrap:wrap}
 .nav-row{display:flex; justify-content:space-between; gap:12px; margin: 10px 0 22px}
-
 .grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; margin-top:12px}
 .grid--2{grid-template-columns:repeat(2, 1fr)}
 @media (max-width: 980px){
@@ -155,8 +151,6 @@ body{
   color: var(--muted);
 }
 
-.muted{color:var(--muted)}
-
 .avatar__head{
   display:flex;
   justify-content:space-between;
@@ -174,81 +168,7 @@ body{
   padding:12px;
 }
 
-.quiz .q{
-  padding:12px;
-  border:1px solid var(--border);
-  border-radius: 14px;
-  margin:10px 0;
-  background:rgba(255,255,255,.03);
-}
-.feedback{
-  margin-top:8px;
-  padding:10px;
-  border-radius: 12px;
-  border:1px solid var(--border);
-  background: rgba(255,255,255,.03);
-  color: var(--muted);
-  min-height: 20px;
-}
-.feedback.ok{border-color: rgba(124,240,200,.55); background: rgba(124,240,200,.08)}
-.feedback.bad{border-color: rgba(255,107,107,.55); background: rgba(255,107,107,.08)}
-
-.input{
-  width:100%;
-  padding:10px 12px;
-  border-radius: 12px;
-  border:1px solid var(--border);
-  background: rgba(10,16,28,.4);
-  color: var(--text);
-  margin-top:6px;
-}
-
-.dnd{display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:10px}
-.dnd__items{
-  min-height: 120px;
-  padding:10px;
-  border:1px solid var(--border);
-  border-radius: 14px;
-  background: rgba(255,255,255,.03);
-  display:flex; flex-wrap:wrap; gap:10px;
-}
-.chip{
-  padding:8px 10px;
-  border-radius:999px;
-  border:1px solid var(--border);
-  background: rgba(87,166,255,.10);
-  cursor:grab;
-  user-select:none;
-}
-.dnd__zones{display:grid; grid-template-columns: 1fr; gap:10px}
-.dropzone{border:1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,.03); padding:10px}
-.dropzone__body{min-height: 46px; display:flex; flex-wrap:wrap; gap:10px}
-.dropzone.dragover{outline:2px solid rgba(87,166,255,.55)}
-
-.case{border:1px solid var(--border); border-radius:14px; padding:12px; margin:10px 0; background: rgba(255,255,255,.03)}
-
-.dialog{
-  border:none;
-  border-radius: 16px;
-  width:min(760px, 96vw);
-  background: #0c1730;
-  color: var(--text);
-  box-shadow: var(--shadow);
-}
-.dialog::backdrop{background: rgba(0,0,0,.55)}
-.dialog__head{display:flex; justify-content:space-between; align-items:center; padding:14px 14px 0}
-.dialog__body{padding:14px}
-
-.score{
-  margin-top:12px;
-  padding:12px;
-  border:1px solid var(--border);
-  border-radius: 14px;
-  background: rgba(255,255,255,.03);
-  color: var(--muted);
-}
-
-/* ===== AVATAR GRANDE + ANIMACIÓN ===== */
+/* ===== Avatar grande ===== */
 .speaker--big{
   display:flex;
   align-items:flex-start;
@@ -256,13 +176,15 @@ body{
   margin-top:10px;
 }
 
+.speaker__photo{ position:relative; width:fit-content; }
 .speaker__img--big{
-  width:190px;
-  height:270px;
+  width:200px;
+  height:285px;
   border-radius:18px;
   object-fit:cover;
   border:2px solid rgba(255,255,255,.18);
-  transform: translateY(0);
+  transform: translateY(0) rotate(0deg);
+  transition: transform 120ms ease;
 }
 
 .speaker__meta{padding-top:6px; min-width:140px}
@@ -270,7 +192,7 @@ body{
 .speaker__name{font-weight:800; font-size:16px}
 .speaker__role{color:var(--muted); font-size:13px; margin-top:4px}
 
-/* Barras “hablando” */
+/* Barras al lado del nombre */
 .talk{
   display:flex;
   align-items:flex-end;
@@ -285,7 +207,49 @@ body{
   background: linear-gradient(180deg, var(--accent), var(--accent2));
 }
 
-.speaker__img--big.is-speaking{
+/* Boca */
+.mouth{
+  position:absolute;
+  left:50%;
+  bottom:40px;
+  width:34px;
+  height:10px;
+  transform: translateX(-50%);
+  border-radius: 0 0 18px 18px;
+  background: rgba(0,0,0,.55);
+  border: 1px solid rgba(255,255,255,.18);
+  opacity: 0;
+}
+
+/* Ondas (al lado de la cara) */
+.voice-waves{
+  position:absolute;
+  right:-16px;
+  bottom:62px;
+  display:flex;
+  gap:4px;
+  opacity: 0;
+}
+.voice-waves span{
+  width:4px;
+  height:10px;
+  border-radius:3px;
+  background: linear-gradient(180deg, var(--accent), var(--accent2));
+}
+
+/* Parpadeo (capa) */
+.blink{
+  position:absolute;
+  inset:0;
+  border-radius:18px;
+  pointer-events:none;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 48%, rgba(0,0,0,.85) 52%, rgba(0,0,0,0) 56%);
+  opacity:0;
+  animation: blink 6.5s infinite;
+}
+
+/* ===== Estado hablando (se activa por JS con .avatar.is-speaking) ===== */
+.avatar.is-speaking .speaker__img--big{
   border-color: rgba(124,240,200,.75);
   box-shadow: 0 0 0 10px rgba(124,240,200,.12);
   animation: bob 900ms ease-in-out infinite;
@@ -296,17 +260,51 @@ body{
 .avatar.is-speaking .talk span:nth-child(2){animation-delay:120ms}
 .avatar.is-speaking .talk span:nth-child(3){animation-delay:240ms}
 
+.avatar.is-speaking .mouth{ opacity:1; }
+.avatar.is-speaking .voice-waves{ opacity:1; }
+.avatar.is-speaking .voice-waves span{ animation: waveTalk 260ms ease-in-out infinite; }
+.avatar.is-speaking .voice-waves span:nth-child(2){animation-delay:80ms}
+.avatar.is-speaking .voice-waves span:nth-child(3){animation-delay:160ms}
+
+/* El JS escribe --talk (0..1) según volumen */
+.avatar.is-speaking .mouth{
+  height: calc(7px + (18px * var(--talk, .4)));
+  border-radius: calc(6px + (12px * var(--talk, .4)));
+}
+.avatar.is-speaking .voice-waves span{
+  height: calc(8px + (16px * var(--talk, .4)));
+}
+
 @keyframes bob{
-  0%,100%{transform: translateY(0)}
-  50%{transform: translateY(-3px)}
+  0%,100%{transform: translateY(0) rotate(0deg)}
+  50%{transform: translateY(-3px) rotate(-0.5deg)}
 }
 @keyframes levels{
   0%,100%{height:5px}
   50%{height:14px}
 }
-
-/* ===== BOTONES DESHABILITADOS (Audio OFF) ===== */
-.is-disabled{
-  opacity:.45;
-  cursor:not-allowed;
+@keyframes waveTalk{
+  0%,100%{opacity:.7}
+  50%{opacity:1}
 }
+@keyframes blink{
+  0%,96%,100%{opacity:0}
+  97%{opacity:.65}
+  98%{opacity:0}
+}
+
+/* Dialog */
+.dialog{
+  border:none;
+  border-radius: 16px;
+  width:min(760px, 96vw);
+  background: #0c1730;
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+.dialog::backdrop{background: rgba(0,0,0,.55)}
+.dialog__head{display:flex; justify-content:space-between; align-items:center; padding:14px 14px 0}
+.dialog__body{padding:14px}
+
+/* Disabled buttons */
+.is-disabled{ opacity:.45; cursor:not-allowed; }
