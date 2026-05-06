@@ -285,6 +285,7 @@ body{
   background: linear-gradient(180deg, var(--accent), var(--accent2));
 }
 
+/* Estado hablando */
 .speaker__img--big.is-speaking{
   border-color: rgba(124,240,200,.75);
   box-shadow: 0 0 0 10px rgba(124,240,200,.12);
@@ -303,10 +304,4 @@ body{
 @keyframes levels{
   0%,100%{height:5px}
   50%{height:14px}
-}
-
-/* ===== BOTONES DESHABILITADOS (Audio OFF) ===== */
-.is-disabled{
-  opacity:.45;
-  cursor:not-allowed;
 }
