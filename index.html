@@ -21,6 +21,7 @@
     <div class="topbar__right">
       <button class="btn btn--ghost" id="btnMenu" aria-haspopup="dialog" aria-controls="menuDialog">Menú</button>
       <button class="btn btn--ghost" id="btnHelp" aria-haspopup="dialog" aria-controls="helpDialog">Ayuda</button>
+      <button class="btn btn--ghost" id="btnZoom" aria-label="Cambiar zoom">Zoom: 100%</button>
       <button class="btn btn--ghost" id="btnAudioToggle" aria-pressed="false">Audio: OFF</button>
     </div>
   </header>
@@ -54,7 +55,7 @@
         <div class="progress__bar" id="progressBar" style="width: 0%"></div>
       </div>
 
-      <!-- ====== P01 (JUAN) ====== -->
+      <!-- ========= P01 (JUAN) ========= -->
       <article class="screen is-active" id="p01" data-title="Portada">
         <div class="card hero">
           <h1>Métricas para despliegue seguro</h1>
@@ -82,7 +83,11 @@
               <h2>Avatar</h2>
 
               <div class="speaker speaker--big">
-                <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan, narrador del ODC" class="speaker__img speaker__img--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez, narrador del ODC" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+
                 <div class="speaker__meta">
                   <div class="speaker__line">
                     <div class="speaker__name">Juan</div>
@@ -91,6 +96,7 @@
                   <div class="speaker__role">Narrador</div>
                 </div>
               </div>
+
             </div>
 
             <div class="avatar__controls">
@@ -99,7 +105,7 @@
             </div>
           </div>
 
-          <p class="transcript" id="tx_p01">
+          <p class="transcript">
             En este recurso vas a construir un tablero mínimo de métricas para despliegue seguro.
             No necesitas memorizar listas: necesitas entender qué métrica sirve para qué decisión.
             Pulsa Iniciar o abre el Menú para ir directo a un módulo.
@@ -112,7 +118,7 @@
         </div>
       </article>
 
-      <!-- ====== P02 (JOSÉ) ====== -->
+      <!-- ========= P02 (JOSÉ) ========= -->
       <article class="screen" id="p02" data-title="REA">
         <div class="card">
           <h2>Resultado Esperado de Aprendizaje (REA)</h2>
@@ -125,7 +131,6 @@
             <li><strong>6 umbrales/gates</strong> de decisión definidos.</li>
             <li><strong>80% de acierto</strong> en la evaluación final.</li>
           </ul>
-
           <button class="btn btn--ghost" data-info="rea">+Info: cómo escribir REA</button>
         </div>
 
@@ -133,8 +138,13 @@
           <div class="avatar__head">
             <div>
               <h2>Avatar</h2>
+
               <div class="speaker speaker--big">
-                <img src="assets/img/avatar-jose.png" alt="Avatar de José, narrador del ODC" class="speaker__img speaker__img--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/avatar-jose.png" alt="Avatar de Jose Luis Malagon Muñoz, narrador del ODC" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+
                 <div class="speaker__meta">
                   <div class="speaker__line">
                     <div class="speaker__name">José</div>
@@ -143,14 +153,16 @@
                   <div class="speaker__role">Narrador</div>
                 </div>
               </div>
+
             </div>
+
             <div class="avatar__controls">
               <audio id="audio_p02" preload="none" src="assets/audio/p02.mp3"></audio>
               <button class="btn btn--ghost btn--sm" data-audio="audio_p02">Play/Pausa</button>
             </div>
           </div>
 
-          <p class="transcript" id="tx_p02">
+          <p class="transcript">
             Tu meta no es saber métricas por separado, sino usarlas para decidir: liberar o detener, priorizar o corregir,
             alertar o investigar. En cada módulo harás una actividad corta con retroalimentación inmediata.
           </p>
@@ -162,7 +174,7 @@
         </div>
       </article>
 
-      <!-- ====== P03 (JUAN) ====== -->
+      <!-- ========= P03 (JUAN) ========= -->
       <article class="screen" id="p03" data-title="Población objetivo">
         <div class="card">
           <h2>Población objetivo</h2>
@@ -170,18 +182,20 @@
             Este ODC está dirigido a <strong>estudiantes</strong> de ingeniería de software, QA y DevOps en formación que participen en proyectos con CI/CD
             y necesiten definir métricas para <strong>liberar</strong>, <strong>monitorear</strong> y <strong>reducir riesgos</strong>.
           </p>
-
-          <div class="callout">
-            Consejo: si un concepto no te suena, usa los botones <strong>+Info</strong>.
-          </div>
+          <div class="callout">Consejo: si un concepto no te suena, usa los botones <strong>+Info</strong>.</div>
         </div>
 
         <div class="card avatar">
           <div class="avatar__head">
             <div>
               <h2>Avatar</h2>
+
               <div class="speaker speaker--big">
-                <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan, narrador del ODC" class="speaker__img speaker__img--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez, narrador del ODC" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+
                 <div class="speaker__meta">
                   <div class="speaker__line">
                     <div class="speaker__name">Juan</div>
@@ -190,14 +204,16 @@
                   <div class="speaker__role">Narrador</div>
                 </div>
               </div>
+
             </div>
+
             <div class="avatar__controls">
               <audio id="audio_p03" preload="none" src="assets/audio/p03.mp3"></audio>
               <button class="btn btn--ghost btn--sm" data-audio="audio_p03">Play/Pausa</button>
             </div>
           </div>
 
-          <p class="transcript" id="tx_p03">
+          <p class="transcript">
             Si ya conoces CI/CD, perfecto. Si no, igual puedes seguir: usa los botones “+Info” para ver definiciones rápidas y no perderte.
           </p>
         </div>
@@ -208,13 +224,11 @@
         </div>
       </article>
 
-      <!-- ====== P04 (JOSÉ) ====== -->
+      <!-- ========= P04 (JOSÉ) ========= -->
       <article class="screen" id="p04" data-title="Menú">
         <div class="card">
           <h2>Menú navegable</h2>
-          <p>
-            Puedes seguir el orden sugerido o entrar a un módulo específico. Usa los botones para avanzar, retroceder o volver al menú.
-          </p>
+          <p>Puedes seguir el orden sugerido o entrar a un módulo específico. Usa los botones para avanzar, retroceder o volver al menú.</p>
 
           <div class="grid">
             <button class="btn btn--ghost" data-go="m01">M1. Problema</button>
@@ -237,8 +251,13 @@
           <div class="avatar__head">
             <div>
               <h2>Avatar</h2>
+
               <div class="speaker speaker--big">
-                <img src="assets/img/avatar-jose.png" alt="Avatar de José, narrador del ODC" class="speaker__img speaker__img--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/avatar-jose.png" alt="Avatar de Jose Luis Malagon Muñoz, narrador del ODC" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+
                 <div class="speaker__meta">
                   <div class="speaker__line">
                     <div class="speaker__name">José</div>
@@ -247,14 +266,16 @@
                   <div class="speaker__role">Narrador</div>
                 </div>
               </div>
+
             </div>
+
             <div class="avatar__controls">
               <audio id="audio_p04" preload="none" src="assets/audio/p04.mp3"></audio>
               <button class="btn btn--ghost btn--sm" data-audio="audio_p04">Play/Pausa</button>
             </div>
           </div>
 
-          <p class="transcript" id="tx_p04">
+          <p class="transcript">
             Puedes seguir el flujo completo o saltar por temas. Si te equivocas, la retroalimentación te dice qué ajustar.
           </p>
         </div>
@@ -265,14 +286,11 @@
         </div>
       </article>
 
-      <!-- ====== M01 (JUAN) ====== -->
+      <!-- ========= M01 ========= -->
       <article class="screen" id="m01" data-title="M1. Problema y evidencia">
         <div class="card">
           <h2>M1. Problema y evidencia: medir para decidir</h2>
-          <p>
-            En despliegues seguros, medir “por medir” no sirve. Una métrica aporta si se conecta con una decisión:
-            <strong>liberar</strong>, <strong>bloquear</strong>, <strong>priorizar</strong> o <strong>investigar</strong>.
-          </p>
+          <p>En despliegues seguros, una métrica aporta si se conecta con una decisión: liberar, bloquear, priorizar o investigar.</p>
 
           <div class="btn-row">
             <button class="btn btn--ghost" data-info="metricaIndicador">+Info: Métrica vs indicador</button>
@@ -307,8 +325,13 @@
           <div class="avatar__head">
             <div>
               <h2>Avatar</h2>
+
               <div class="speaker speaker--big">
-                <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan, narrador del ODC" class="speaker__img speaker__img--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez, narrador del ODC" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+
                 <div class="speaker__meta">
                   <div class="speaker__line">
                     <div class="speaker__name">Juan</div>
@@ -317,15 +340,14 @@
                   <div class="speaker__role">Narrador</div>
                 </div>
               </div>
+
             </div>
             <div class="avatar__controls">
               <audio id="audio_m01" preload="none" src="assets/audio/m01.mp3"></audio>
               <button class="btn btn--ghost btn--sm" data-audio="audio_m01">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript" id="tx_m01">
-            Tu objetivo es amarrar métricas a decisiones. Piensa en el tablero como un semáforo con reglas, no como un reporte.
-          </p>
+          <p class="transcript">Tu objetivo es amarrar métricas a decisiones. Tablero = semáforo con reglas.</p>
         </div>
 
         <div class="nav-row">
@@ -334,11 +356,11 @@
         </div>
       </article>
 
-      <!-- ====== M02 (JOSÉ) ====== -->
+      <!-- ========= M02 ========= -->
       <article class="screen" id="m02" data-title="M2. Taxonomía de métricas">
         <div class="card">
           <h2>M2. Taxonomía: software, red/infra y seguridad</h2>
-          <p>Para despliegue seguro necesitas tres capas: software, infraestructura/servicio y seguridad.</p>
+          <p>Un tablero mínimo debe cubrir las tres capas para no tomar decisiones “ciegas”.</p>
 
           <h3>Actividad (clasificación)</h3>
           <p class="muted">Arrastra cada elemento a su categoría.</p>
@@ -360,18 +382,9 @@
             </div>
 
             <div class="dnd__zones">
-              <div class="dropzone" data-zone="software">
-                <h4>Software</h4>
-                <div class="dropzone__body"></div>
-              </div>
-              <div class="dropzone" data-zone="infra">
-                <h4>Red/Infra</h4>
-                <div class="dropzone__body"></div>
-              </div>
-              <div class="dropzone" data-zone="seguridad">
-                <h4>Seguridad</h4>
-                <div class="dropzone__body"></div>
-              </div>
+              <div class="dropzone" data-zone="software"><h4>Software</h4><div class="dropzone__body"></div></div>
+              <div class="dropzone" data-zone="infra"><h4>Red/Infra</h4><div class="dropzone__body"></div></div>
+              <div class="dropzone" data-zone="seguridad"><h4>Seguridad</h4><div class="dropzone__body"></div></div>
             </div>
           </div>
 
@@ -385,8 +398,13 @@
           <div class="avatar__head">
             <div>
               <h2>Avatar</h2>
+
               <div class="speaker speaker--big">
-                <img src="assets/img/avatar-jose.png" alt="Avatar de José, narrador del ODC" class="speaker__img speaker__img--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/avatar-jose.png" alt="Avatar de Jose Luis Malagon Muñoz, narrador del ODC" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+
                 <div class="speaker__meta">
                   <div class="speaker__line">
                     <div class="speaker__name">José</div>
@@ -395,15 +413,14 @@
                   <div class="speaker__role">Narrador</div>
                 </div>
               </div>
+
             </div>
             <div class="avatar__controls">
               <audio id="audio_m02" preload="none" src="assets/audio/m02.mp3"></audio>
               <button class="btn btn--ghost btn--sm" data-audio="audio_m02">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript" id="tx_m02">
-            La clave es equilibrio: un tablero mínimo debe cubrir las tres capas para no tomar decisiones “ciegas”.
-          </p>
+          <p class="transcript">Equilibrio: software + infra + seguridad. Sin una capa, la decisión falla.</p>
         </div>
 
         <div class="nav-row">
@@ -412,7 +429,7 @@
         </div>
       </article>
 
-      <!-- ====== M03 (JUAN) ====== -->
+      <!-- ========= M03 ========= -->
       <article class="screen" id="m03" data-title="M3. Métricas de software">
         <div class="card">
           <h2>M3. Métricas de software: señales de calidad</h2>
@@ -443,8 +460,13 @@
           <div class="avatar__head">
             <div>
               <h2>Avatar</h2>
+
               <div class="speaker speaker--big">
-                <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan, narrador del ODC" class="speaker__img speaker__img--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez, narrador del ODC" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+
                 <div class="speaker__meta">
                   <div class="speaker__line">
                     <div class="speaker__name">Juan</div>
@@ -453,13 +475,14 @@
                   <div class="speaker__role">Narrador</div>
                 </div>
               </div>
+
             </div>
             <div class="avatar__controls">
               <audio id="audio_m03" preload="none" src="assets/audio/m03.mp3"></audio>
               <button class="btn btn--ghost btn--sm" data-audio="audio_m03">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript" id="tx_m03">Riesgo del cambio: complejidad, cobertura del módulo y smells.</p>
+          <p class="transcript">Riesgo del cambio: complejidad + cobertura del módulo + smells.</p>
         </div>
 
         <div class="nav-row">
@@ -468,7 +491,7 @@
         </div>
       </article>
 
-      <!-- ====== M04 (JOSÉ) ====== -->
+      <!-- ========= M04 ========= -->
       <article class="screen" id="m04" data-title="M4. Red/Infra y SRE">
         <div class="card">
           <h2>M4. Métricas de red/infra: SLI/SLO para operación</h2>
@@ -504,8 +527,13 @@
           <div class="avatar__head">
             <div>
               <h2>Avatar</h2>
+
               <div class="speaker speaker--big">
-                <img src="assets/img/avatar-jose.png" alt="Avatar de José, narrador del ODC" class="speaker__img speaker__img--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/avatar-jose.png" alt="Avatar de Jose Luis Malagon Muñoz, narrador del ODC" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+
                 <div class="speaker__meta">
                   <div class="speaker__line">
                     <div class="speaker__name">José</div>
@@ -514,13 +542,14 @@
                   <div class="speaker__role">Narrador</div>
                 </div>
               </div>
+
             </div>
             <div class="avatar__controls">
               <audio id="audio_m04" preload="none" src="assets/audio/m04.mp3"></audio>
               <button class="btn btn--ghost btn--sm" data-audio="audio_m04">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript" id="tx_m04">Si no cumples SLO, frenas o mitigas: no importa que el build “pase”.</p>
+          <p class="transcript">Si no cumples SLO, frenas o mitigas: no importa que el build “pase”.</p>
         </div>
 
         <div class="nav-row">
@@ -529,7 +558,7 @@
         </div>
       </article>
 
-      <!-- ====== M05 (JUAN) ====== -->
+      <!-- ========= M05 ========= -->
       <article class="screen" id="m05" data-title="M5. Seguridad en CI/CD">
         <div class="card">
           <h2>M5. Indicadores de seguridad: riesgo controlable</h2>
@@ -587,8 +616,13 @@
           <div class="avatar__head">
             <div>
               <h2>Avatar</h2>
+
               <div class="speaker speaker--big">
-                <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan, narrador del ODC" class="speaker__img speaker__img--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez, narrador del ODC" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+
                 <div class="speaker__meta">
                   <div class="speaker__line">
                     <div class="speaker__name">Juan</div>
@@ -597,13 +631,14 @@
                   <div class="speaker__role">Narrador</div>
                 </div>
               </div>
+
             </div>
             <div class="avatar__controls">
               <audio id="audio_m05" preload="none" src="assets/audio/m05.mp3"></audio>
               <button class="btn btn--ghost btn--sm" data-audio="audio_m05">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript" id="tx_m05">Vulnerabilidad crítica = gate consistente. No hay “excepciones” si quieres control.</p>
+          <p class="transcript">Vulnerabilidad crítica = gate consistente. No hay “excepciones” si quieres control.</p>
         </div>
 
         <div class="nav-row">
@@ -612,7 +647,7 @@
         </div>
       </article>
 
-      <!-- ====== M06 (JOSÉ) ====== -->
+      <!-- ========= M06 ========= -->
       <article class="screen" id="m06" data-title="M6. Umbrales y gates">
         <div class="card">
           <h2>M6. Umbrales y gates: reglas de decisión</h2>
@@ -644,8 +679,13 @@
           <div class="avatar__head">
             <div>
               <h2>Avatar</h2>
+
               <div class="speaker speaker--big">
-                <img src="assets/img/avatar-jose.png" alt="Avatar de José, narrador del ODC" class="speaker__img speaker__img--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/avatar-jose.png" alt="Avatar de Jose Luis Malagon Muñoz, narrador del ODC" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+
                 <div class="speaker__meta">
                   <div class="speaker__line">
                     <div class="speaker__name">José</div>
@@ -654,13 +694,14 @@
                   <div class="speaker__role">Narrador</div>
                 </div>
               </div>
+
             </div>
             <div class="avatar__controls">
               <audio id="audio_m06" preload="none" src="assets/audio/m06.mp3"></audio>
               <button class="btn btn--ghost btn--sm" data-audio="audio_m06">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript" id="tx_m06">Si no hay acción ejecutable, no es umbral: es un dato suelto.</p>
+          <p class="transcript">Si no hay acción ejecutable, no es umbral: es un dato suelto.</p>
         </div>
 
         <div class="nav-row">
@@ -669,7 +710,7 @@
         </div>
       </article>
 
-      <!-- ====== M07 (JUAN) ====== -->
+      <!-- ========= M07 ========= -->
       <article class="screen" id="m07" data-title="M7. Tablero y decisiones">
         <div class="card">
           <h2>M7. Tablero mínimo: decidir liberar o bloquear</h2>
@@ -716,8 +757,13 @@
           <div class="avatar__head">
             <div>
               <h2>Avatar</h2>
+
               <div class="speaker speaker--big">
-                <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan, narrador del ODC" class="speaker__img speaker__img--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez, narrador del ODC" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+
                 <div class="speaker__meta">
                   <div class="speaker__line">
                     <div class="speaker__name">Juan</div>
@@ -726,13 +772,14 @@
                   <div class="speaker__role">Narrador</div>
                 </div>
               </div>
+
             </div>
             <div class="avatar__controls">
               <audio id="audio_m07" preload="none" src="assets/audio/m07.mp3"></audio>
               <button class="btn btn--ghost btn--sm" data-audio="audio_m07">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript" id="tx_m07">No respondas por intuición: usa gates, umbrales y riesgo.</p>
+          <p class="transcript">No respondas por intuición: usa gates, umbrales y riesgo.</p>
         </div>
 
         <div class="nav-row">
@@ -741,7 +788,7 @@
         </div>
       </article>
 
-      <!-- ====== M08 (JOSÉ) ====== -->
+      <!-- ========= M08 ========= -->
       <article class="screen" id="m08" data-title="M8. Buenas prácticas">
         <div class="card">
           <h2>M8. Buenas prácticas y errores comunes</h2>
@@ -769,8 +816,13 @@
           <div class="avatar__head">
             <div>
               <h2>Avatar</h2>
+
               <div class="speaker speaker--big">
-                <img src="assets/img/avatar-jose.png" alt="Avatar de José, narrador del ODC" class="speaker__img speaker__img--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/avatar-jose.png" alt="Avatar de Jose Luis Malagon Muñoz, narrador del ODC" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+
                 <div class="speaker__meta">
                   <div class="speaker__line">
                     <div class="speaker__name">José</div>
@@ -779,13 +831,14 @@
                   <div class="speaker__role">Narrador</div>
                 </div>
               </div>
+
             </div>
             <div class="avatar__controls">
               <audio id="audio_m08" preload="none" src="assets/audio/m08.mp3"></audio>
               <button class="btn btn--ghost btn--sm" data-audio="audio_m08">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript" id="tx_m08">Si una métrica no cambia una decisión, estorba.</p>
+          <p class="transcript">Si una métrica no cambia una decisión, estorba.</p>
         </div>
 
         <div class="nav-row">
@@ -794,12 +847,11 @@
         </div>
       </article>
 
-      <!-- ====== P13 Evaluación final ====== -->
+      <!-- ========= P13 ========= -->
       <article class="screen" id="p13" data-title="Evaluación final">
         <div class="card">
           <h2>Evaluación final (8 ítems)</h2>
           <p class="muted">Debes lograr 80% o más. Cada respuesta tiene retroalimentación.</p>
-
           <form class="quiz" data-quiz="final">
             <div class="q">
               <p>1) “Latencia p95” es una métrica de:</p>
@@ -808,7 +860,6 @@
               <label><input type="radio" name="f1" value="sec"> Seguridad</label>
               <div class="feedback" data-fb="f1"></div>
             </div>
-
             <div class="q">
               <p>2) “Code smells” corresponde a:</p>
               <label><input type="radio" name="f2" value="sw"> Software</label>
@@ -816,7 +867,6 @@
               <label><input type="radio" name="f2" value="sec"> Seguridad</label>
               <div class="feedback" data-fb="f2"></div>
             </div>
-
             <div class="q">
               <p>3) “Vulnerabilidades críticas abiertas” corresponde a:</p>
               <label><input type="radio" name="f3" value="sw"> Software</label>
@@ -824,7 +874,6 @@
               <label><input type="radio" name="f3" value="sec"> Seguridad</label>
               <div class="feedback" data-fb="f3"></div>
             </div>
-
             <div class="q">
               <p>4) ¿Cuál bloquea el despliegue?</p>
               <label><input type="radio" name="f4" value="likes"> Likes bajos</label>
@@ -832,7 +881,6 @@
               <label><input type="radio" name="f4" value="lines"> Muchas líneas</label>
               <div class="feedback" data-fb="f4"></div>
             </div>
-
             <div class="q">
               <p>5) Elige el umbral correcto (accionable):</p>
               <label><input type="radio" name="f5" value="a"> “Latencia p95 es alta”</label>
@@ -840,7 +888,6 @@
               <label><input type="radio" name="f5" value="c"> “El sistema se siente lento”</label>
               <div class="feedback" data-fb="f5"></div>
             </div>
-
             <div class="q">
               <p>6) ¿Cuál es una métrica vanity?</p>
               <label><input type="radio" name="f6" value="likes"> Likes/estrellas</label>
@@ -848,14 +895,12 @@
               <label><input type="radio" name="f6" value="lat"> Latencia p95</label>
               <div class="feedback" data-fb="f6"></div>
             </div>
-
             <div class="q">
               <p>7) Caso: Vuln críticas = 1, lo demás OK. Decisión:</p>
               <label><input type="radio" name="f7" value="liberar"> Liberar</label>
               <label><input type="radio" name="f7" value="bloquear"> Bloquear</label>
               <div class="feedback" data-fb="f7"></div>
             </div>
-
             <div class="q">
               <p>8) Selecciona 3 métricas mínimas para release (elige 3):</p>
               <label><input type="checkbox" name="f8" value="cov"> Cobertura de pruebas</label><br/>
@@ -877,7 +922,7 @@
         </div>
       </article>
 
-      <!-- ====== P14 Conclusión (AMPLIADA) ====== -->
+      <!-- ========= P14 ========= -->
       <article class="screen" id="p14" data-title="Conclusión">
         <div class="card">
           <h2>Conclusión</h2>
@@ -907,27 +952,23 @@
         </div>
       </article>
 
-      <!-- ====== P15 Referencias (REALES) ====== -->
+      <!-- ========= P15 ========= -->
       <article class="screen" id="p15" data-title="Referencias">
         <div class="card">
           <h2>Referencias (APA 7)</h2>
           <ol class="refs">
-            <li>Forsgren, N., Humble, J., & Kim, G. (2018). <em>Accelerate: The science of lean software and DevOps: Building and scaling high performing technology organizations</em>. IT Revolution Press.</li>
-            <li>Beyer, B., Jones, C., Petoff, J., & Murphy, N. R. (Eds.). (2016). <em>Site Reliability Engineering: How Google runs production systems</em>. O’Reilly Media.</li>
-            <li>International Organization for Standardization. (2011). <em>ISO/IEC 25010:2011 Systems and software engineering—Systems and software Quality Requirements and Evaluation (SQuaRE)—System and software quality models</em>.</li>
-            <li>International Organization for Standardization. (2022). <em>ISO/IEC 27001:2022 Information security, cybersecurity and privacy protection—Information security management systems—Requirements</em>.</li>
-            <li>International Organization for Standardization. (2013). <em>ISO/IEC/IEEE 29119-2:2013 Software and systems engineering—Software testing—Part 2: Test processes</em>.</li>
-            <li>National Institute of Standards and Technology. (2020). <em>Security and Privacy Controls for Information Systems and Organizations (SP 800-53 Rev. 5)</em>.</li>
-            <li>Souppaya, M., Scarfone, K., & Dodson, D. (2022). <em>Secure Software Development Framework (SSDF) Version 1.1 (NIST SP 800-218)</em>. National Institute of Standards and Technology.</li>
+            <li>Forsgren, N., Humble, J., & Kim, G. (2018). <em>Accelerate: The science of lean software and DevOps</em>. IT Revolution Press.</li>
+            <li>Beyer, B., Jones, C., Petoff, J., & Murphy, N. R. (Eds.). (2016). <em>Site Reliability Engineering</em>. O’Reilly Media.</li>
+            <li>International Organization for Standardization. (2011). <em>ISO/IEC 25010:2011</em>.</li>
+            <li>International Organization for Standardization. (2022). <em>ISO/IEC 27001:2022</em>.</li>
+            <li>International Organization for Standardization. (2013). <em>ISO/IEC/IEEE 29119-2:2013</em>.</li>
+            <li>National Institute of Standards and Technology. (2020). <em>SP 800-53 Rev. 5</em>.</li>
+            <li>Souppaya, M., Scarfone, K., & Dodson, D. (2022). <em>NIST SP 800-218 (SSDF)</em>. NIST.</li>
             <li>OWASP Foundation. (2021). <em>OWASP Top 10:2021</em>.</li>
             <li>OWASP Foundation. (n. d.). <em>Application Security Verification Standard (ASVS)</em>.</li>
             <li>OWASP Foundation. (2020). <em>OWASP SAMM v2.0</em>.</li>
-            <li>Atlassian. (n. d.). <em>DORA metrics: How to measure Open DevOps success</em>.</li>
-            <li>Google Cloud. (n. d.). <em>Site Reliability Engineering (SRE) principles</em>.</li>
           </ol>
-          <div class="callout">
-            Importante: agrega aquí también los artículos empíricos de tu matriz (Scopus) para cumplir el mínimo de referencias exigido por tu curso.
-          </div>
+          <div class="callout">Agrega aquí también los artículos empíricos de tu matriz Scopus para cumplir el mínimo de referencias del curso.</div>
         </div>
 
         <div class="nav-row">
@@ -936,7 +977,7 @@
         </div>
       </article>
 
-      <!-- ====== P16 Créditos y licencia (AMPLIADO + NOMBRES) ====== -->
+      <!-- ========= P16 ========= -->
       <article class="screen" id="p16" data-title="Créditos y licencia">
         <div class="card">
           <h2>Créditos y licencia</h2>
@@ -944,15 +985,15 @@
           <h3>Créditos</h3>
           <ul>
             <li><strong>Autores / Estudiantes:</strong> Juan Esteban Cifuentes Sanchez; Jose Luis Malagon Muñoz.</li>
-            <li><strong>Diseño instruccional y estructura del ODC:</strong> Juan Esteban Cifuentes Sanchez; Jose Luis Malagon Muñoz.</li>
-            <li><strong>Guion y narración (audio):</strong> Juan Esteban Cifuentes Sanchez; Jose Luis Malagon Muñoz.</li>
+            <li><strong>Diseño instruccional y estructura:</strong> Juan Esteban Cifuentes Sanchez; Jose Luis Malagon Muñoz.</li>
+            <li><strong>Guion y narración:</strong> Juan Esteban Cifuentes Sanchez; Jose Luis Malagon Muñoz.</li>
             <li><strong>Desarrollo web (HTML/CSS/JS) y publicación:</strong> Juan Esteban Cifuentes Sanchez; Jose Luis Malagon Muñoz.</li>
-            <li><strong>Recursos (avatares):</strong> Fotografías propias de los estudiantes.</li>
+            <li><strong>Recursos (avatares):</strong> Producción propia (fotografías/avatares de los estudiantes).</li>
           </ul>
 
           <h3>Licencia</h3>
           <p>
-            Este Objeto Digital de Conocimiento (ODC) se distribuye bajo licencia <strong>Creative Commons Atribución 4.0 Internacional (CC BY 4.0)</strong>.
+            Este ODC se distribuye bajo licencia <strong>Creative Commons Atribución 4.0 Internacional (CC BY 4.0)</strong>.
             Se permite copiar, redistribuir, remezclar y adaptar, siempre que se otorgue atribución adecuada a los autores.
           </p>
 
@@ -973,7 +1014,7 @@
     </section>
   </main>
 
-  <!-- Dialogs -->
+  <!-- ===== Dialogs ===== -->
   <dialog id="menuDialog" class="dialog">
     <div class="dialog__head">
       <h3>Menú</h3>
@@ -1006,12 +1047,38 @@
       <h3>Ayuda</h3>
       <button class="btn btn--ghost btn--sm" data-close="helpDialog">Cerrar</button>
     </div>
+
     <div class="dialog__body">
+      <h4>Navegación</h4>
       <ol>
-        <li>Usa Menú para saltar a cualquier módulo.</li>
-        <li>Play/Pausa activa animación de “hablando”.</li>
-        <li>Al cambiar de pantalla, el audio anterior se detiene automáticamente.</li>
+        <li>Usa <strong>Menú</strong> para saltar a cualquier módulo.</li>
+        <li>Usa <strong>Siguiente</strong> y <strong>Anterior</strong> para avanzar por el recorrido.</li>
+        <li>Cuando cambias de pantalla, el audio del módulo anterior se <strong>detiene automáticamente</strong>.</li>
       </ol>
+
+      <h4>Audio (ON / OFF)</h4>
+      <ul>
+        <li>El botón <strong>Audio: ON/OFF</strong> controla si se puede reproducir narración.</li>
+        <li>Si está en <strong>OFF</strong>, los botones <strong>Play/Pausa</strong> quedan deshabilitados y no sonará nada.</li>
+        <li>Si el audio no se reproduce, verifica primero que el botón esté en <strong>Audio: ON</strong>.</li>
+        <li>Si sigue sin sonar, revisa que los archivos estén en <code>assets/audio/</code> con nombres exactos
+          <code>p01.mp3</code>…<code>p04.mp3</code> y <code>m01.mp3</code>…<code>m08.mp3</code>.</li>
+      </ul>
+
+      <h4>Zoom</h4>
+      <ul>
+        <li>El botón <strong>Zoom</strong> cambia el tamaño de la interfaz: <strong>100% → 110% → 125% → 140%</strong>.</li>
+        <li>Si ves el texto muy pequeño, aumenta el zoom; si se ve demasiado grande, vuelve a presionar hasta 100%.</li>
+        <li>El zoom se guarda automáticamente para la siguiente vez.</li>
+      </ul>
+
+      <h4>Animación del avatar</h4>
+      <ul>
+        <li>Al reproducir un audio, el avatar muestra <strong>movimiento</strong>, <strong>ondas</strong> y <strong>boca animada</strong>.</li>
+        <li>Esto indica visualmente que el avatar “está hablando”.</li>
+      </ul>
+
+      <p class="muted">Si algo no cambia tras actualizar, recarga con <strong>Ctrl + F5</strong> (caché).</p>
     </div>
   </dialog>
 
