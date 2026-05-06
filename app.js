@@ -11,10 +11,11 @@ const infoBody = document.getElementById("infoBody");
 const btnMenu = document.getElementById("btnMenu");
 const btnHelp = document.getElementById("btnHelp");
 const btnAudioToggle = document.getElementById("btnAudioToggle");
+const btnZoom = document.getElementById("btnZoom");
 
 let globalAudioEnabled = false;
 
-/* ✅ NUEVO: detener todo audio al navegar */
+/* ===== AUDIO CONTROL ===== */
 function stopAllAudio() {
   document.querySelectorAll("audio").forEach(a => {
     a.pause();
@@ -24,6 +25,31 @@ function stopAllAudio() {
   document.querySelectorAll(".avatar").forEach(av => av.classList.remove("is-speaking"));
 }
 
+function setAudioButtonsEnabled(enabled) {
+  document.querySelectorAll('[data-audio]').forEach(btn => {
+    btn.disabled = !enabled;
+    btn.classList.toggle("is-disabled", !enabled);
+  });
+}
+
+/* ===== ZOOM CONTROL ===== */
+const ZOOMS = [1, 1.1, 1.25, 1.4];
+let zoomIndex = 0;
+
+function applyZoom(z) {
+  document.body.style.zoom = String(z);
+  localStorage.setItem("odc_zoom", String(z));
+  if (btnZoom) btnZoom.textContent = `Zoom: ${Math.round(z * 100)}%`;
+}
+
+function loadZoom() {
+  const saved = parseFloat(localStorage.getItem("odc_zoom") || "1");
+  const idx = ZOOMS.findIndex(v => Math.abs(v - saved) < 0.001);
+  zoomIndex = idx >= 0 ? idx : 0;
+  applyZoom(ZOOMS[zoomIndex]);
+}
+
+/* ===== INFO ===== */
 const INFO = {
   rea: {
     title: "Cómo escribir un REA",
@@ -40,25 +66,27 @@ const INFO = {
            <p><strong>Indicador:</strong> interpretación para actuar (p. ej., “incumple SLO, bloquear”).</p>`
   },
   gate: { title: "Qué es un gate", body: `<p><strong>Gate:</strong> regla que habilita o bloquea una acción (por ejemplo, despliegue).</p>` },
-  mi: { title: "Maintainability Index", body: `<p>Indicador compuesto para estimar mantenibilidad (relacionado con complejidad y otros factores).</p>` },
-  smells: { title: "Code smells", body: `<p>Patrones de código que elevan el riesgo de mantenimiento (duplicación, métodos largos, alta complejidad).</p>` },
-  slo: { title: "SLI vs SLO", body: `<p><strong>SLI</strong>: indicador medible (latencia, disponibilidad).</p><p><strong>SLO</strong>: objetivo/compromiso (p. ej., p95 &lt; 250 ms).</p>` },
-  umbral: { title: "Cómo escribir un umbral", body: `<ul><li>Métrica + operador + valor + acción.</li><li>Ej: “Bloquear si vuln críticas &gt; 0”.</li><li>Ej: “Alertar si latencia p95 &gt; 15% vs baseline”.</li></ul>` }
+  mi: { title: "Maintainability Index", body: `<p>Indicador compuesto para estimar mantenibilidad.</p>` },
+  smells: { title: "Code smells", body: `<p>Patrones de código que elevan riesgo de mantenimiento.</p>` },
+  slo: { title: "SLI vs SLO", body: `<p><strong>SLI</strong>: indicador medible (latencia, disponibilidad).</p><p><strong>SLO</strong>: objetivo/compromiso.</p>` },
+  umbral: { title: "Cómo escribir un umbral", body: `<ul><li>Métrica + operador + valor + acción.</li></ul>` }
 };
 
+/* ===== NAV ===== */
 function setActiveScreen(id) {
-  stopAllAudio(); // ✅ CORRECCIÓN solicitada: audio se detiene al cambiar de módulo/pantalla
+  stopAllAudio(); // CORRECCIÓN: al cambiar módulo se corta el audio
 
   screens.forEach(s => s.classList.toggle("is-active", s.id === id));
   sideItems.forEach(b => b.classList.toggle("is-active", b.dataset.go === id));
 
   const idx = screens.findIndex(s => s.id === id);
   const pct = Math.round(((idx + 1) / screens.length) * 100);
-  progressBar.style.width = `${pct}%`;
+  if (progressBar) progressBar.style.width = `${pct}%`;
 
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+/* ===== EVENTS ===== */
 document.addEventListener("click", (e) => {
   const go = e.target.closest("[data-go]");
   if (go) setActiveScreen(go.dataset.go);
@@ -78,14 +106,18 @@ document.addEventListener("click", (e) => {
     infoDialog.showModal();
   }
 
-  // AUDIO + ANIMACIÓN
+  // AUDIO + ANIMACIÓN (bloqueado si OFF)
   const audioBtn = e.target.closest("[data-audio]");
   if (audioBtn) {
+    if (!globalAudioEnabled) {
+      stopAllAudio();
+      return;
+    }
+
     const audioId = audioBtn.dataset.audio;
     const el = document.getElementById(audioId);
     if (!el) return;
 
-    // Apaga otros audios
     document.querySelectorAll("audio").forEach(a => { if (a !== el) a.pause(); });
 
     // Limpia animación previa
@@ -111,6 +143,7 @@ document.addEventListener("click", (e) => {
     }
   }
 
+  // CHECKS
   const check = e.target.closest("[data-check]");
   if (!check) return;
   const quiz = check.dataset.check;
@@ -124,10 +157,22 @@ document.addEventListener("click", (e) => {
 
 btnMenu?.addEventListener("click", () => menuDialog.showModal());
 btnHelp?.addEventListener("click", () => helpDialog.showModal());
+
+btnZoom?.addEventListener("click", () => {
+  zoomIndex = (zoomIndex + 1) % ZOOMS.length;
+  applyZoom(ZOOMS[zoomIndex]);
+});
+
 btnAudioToggle?.addEventListener("click", () => {
   globalAudioEnabled = !globalAudioEnabled;
+
   btnAudioToggle.setAttribute("aria-pressed", String(globalAudioEnabled));
   btnAudioToggle.textContent = globalAudioEnabled ? "Audio: ON" : "Audio: OFF";
+
+  if (!globalAudioEnabled) stopAllAudio();
+  setAudioButtonsEnabled(globalAudioEnabled);
+
+  localStorage.setItem("odc_audio_enabled", globalAudioEnabled ? "1" : "0");
 });
 
 /* ===== QUIZZES ===== */
@@ -309,5 +354,17 @@ document.getElementById("checkCases")?.addEventListener("click", ()=>{
   set(fbB, B==="bloquear", B==="bloquear" ? "Correcto." : "Incorrecto: vulnerabilidades críticas bloquean.");
   set(fbC, C==="bloquear", C==="bloquear" ? "Correcto." : "Incorrecto: fallar pruebas bloquea.");
 });
+
+/* ===== INIT ===== */
+loadZoom();
+
+const savedAudio = localStorage.getItem("odc_audio_enabled");
+globalAudioEnabled = savedAudio === "1";
+if (btnAudioToggle) {
+  btnAudioToggle.setAttribute("aria-pressed", String(globalAudioEnabled));
+  btnAudioToggle.textContent = globalAudioEnabled ? "Audio: ON" : "Audio: OFF";
+}
+setAudioButtonsEnabled(globalAudioEnabled);
+if (!globalAudioEnabled) stopAllAudio();
 
 setActiveScreen("p01");
