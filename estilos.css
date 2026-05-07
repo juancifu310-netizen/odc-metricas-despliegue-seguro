@@ -284,7 +284,7 @@ body{
   border-radius: 0 0 20px 20px;
   background: rgba(0,0,0,.35);
   border:1px solid rgba(255,255,255,.18);
-  opacity:0; /* apagada por defecto */
+  opacity:0;
 }
 
 /* Barras “hablando” */
@@ -337,7 +337,7 @@ body{
   50%{transform: translateX(-50%) scaleY(1.2)}
 }
 
-/* ===== Audio OFF: botones deshabilitados ===== */
+/* ===== Audio OFF ===== */
 .is-disabled{
   opacity:.45;
   cursor:not-allowed;
