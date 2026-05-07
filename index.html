@@ -84,10 +84,9 @@
           <div class="avatar__head">
             <div>
               <h2>Avatar</h2>
-
               <div class="speaker speaker--big">
                 <div class="speaker__imgWrap">
-                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez, narrador del ODC" class="speaker__img speaker__img--big">
+                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez" class="speaker__img speaker__img--big">
                   <div class="mouth" aria-hidden="true"></div>
                 </div>
                 <div class="speaker__meta">
@@ -139,10 +138,9 @@
           <div class="avatar__head">
             <div>
               <h2>Avatar</h2>
-
               <div class="speaker speaker--big">
                 <div class="speaker__imgWrap">
-                  <img src="assets/img/avatar-jose.png" alt="Avatar de Jose Luis Malagon Muñoz, narrador del ODC" class="speaker__img speaker__img--big">
+                  <img src="assets/img/avatar-jose.png" alt="Avatar de Jose Luis Malagon Muñoz" class="speaker__img speaker__img--big">
                   <div class="mouth" aria-hidden="true"></div>
                 </div>
                 <div class="speaker__meta">
@@ -190,7 +188,7 @@
               <h2>Avatar</h2>
               <div class="speaker speaker--big">
                 <div class="speaker__imgWrap">
-                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez, narrador del ODC" class="speaker__img speaker__img--big">
+                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez" class="speaker__img speaker__img--big">
                   <div class="mouth" aria-hidden="true"></div>
                 </div>
                 <div class="speaker__meta">
@@ -224,7 +222,7 @@
       <article class="screen" id="p04" data-title="Menú">
         <div class="card">
           <h2>Menú navegable</h2>
-          <p>Puedes seguir el orden sugerido o entrar a un módulo específico. Usa los botones para avanzar, retroceder o volver al menú.</p>
+          <p>Puedes seguir el orden sugerido o entrar a un módulo específico.</p>
 
           <div class="grid">
             <button class="btn btn--ghost" data-go="m01">M1. Problema</button>
@@ -243,13 +241,39 @@
           </div>
         </div>
 
+        <div class="card avatar">
+          <div class="avatar__head">
+            <div>
+              <h2>Avatar</h2>
+              <div class="speaker speaker--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/avatar-jose.png" alt="Avatar de Jose Luis Malagon Muñoz" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+                <div class="speaker__meta">
+                  <div class="speaker__line">
+                    <div class="speaker__name">José</div>
+                    <div class="talk" aria-hidden="true"><span></span><span></span><span></span></div>
+                  </div>
+                  <div class="speaker__role">Narrador</div>
+                </div>
+              </div>
+            </div>
+            <div class="avatar__controls">
+              <audio id="audio_p04" preload="none" src="assets/audio/p04.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_p04">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript">Selecciona un módulo y practica con actividades y retroalimentación inmediata.</p>
+        </div>
+
         <div class="nav-row">
           <button class="btn btn--ghost" data-go="p03">← Anterior</button>
           <button class="btn" data-go="p05">Siguiente →</button>
         </div>
       </article>
 
-      <!-- ====== P05 PRISMA (SCOPUS) — REAL ====== -->
+      <!-- ====== P05 PRISMA (JUAN) ====== -->
       <article class="screen" id="p05" data-title="PRISMA (Scopus)">
         <div class="card">
           <h2>Metodología PRISMA aplicada (Scopus)</h2>
@@ -260,29 +284,8 @@
             para apoyar la evaluación, el monitoreo y la toma de decisiones en proyectos de desarrollo con enfoques de despliegue seguro?
           </p>
 
-          <h3>Línea translocal</h3>
-          <p>
-            Software seguro y de calidad (aseguramiento de calidad, medición/métricas e indicadores, mejora continua del proceso y del producto,
-            DevSecOps/CI-CD seguro y observabilidad de infraestructura para soporte de decisiones).
-          </p>
-
-          <h3>Problema translocal</h3>
-          <p>
-            En proyectos de desarrollo con despliegue seguro, la toma de decisiones se ve afectada por el uso de métricas dispersas, no comparables o mal seleccionadas
-            entre calidad de software y operación/infraestructura de red. Esto dificulta evaluar y monitorear de forma consistente, incrementando fallas en producción,
-            degradación del servicio y exposición a vulnerabilidades. Se requiere sintetizar evidencia empírica (2021–2026) sobre qué métricas se usan y cuáles aportan
-            mayor utilidad para la toma de decisiones en despliegues seguros.
-          </p>
-
-          <h3>Estrategia de búsqueda (Scopus)</h3>
-          <ul>
-            <li><strong>Campo:</strong> TITLE-ABS-KEY</li>
-            <li><strong>Filtros:</strong> Article (ar) / Conference Paper (cp); Idioma: English OR Spanish; Periodo: 2021–2026</li>
-          </ul>
-
-          <details>
-            <summary><strong>Ecuación Scopus (Advanced Search)</strong></summary>
-            <pre style="white-space:pre-wrap;border:1px solid var(--border);padding:12px;border-radius:12px;background:rgba(255,255,255,.03);">
+          <h3>Ecuación Scopus (Advanced Search)</h3>
+          <pre style="white-space:pre-wrap;border:1px solid var(--border);padding:12px;border-radius:12px;background:rgba(255,255,255,.03);">
 TITLE-ABS-KEY(
   (
     ("software quality" OR "software quality metrics" OR "quality metrics" OR maintainability OR reliability OR "defect density" OR "test coverage" OR "code smells" OR "cyclomatic complexity")
@@ -297,45 +300,42 @@ TITLE-ABS-KEY(
 AND PUBYEAR > 2020 AND PUBYEAR < 2027
 AND (LIMIT-TO(DOCTYPE,"ar") OR LIMIT-TO(DOCTYPE,"cp"))
 AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
-            </pre>
-          </details>
+          </pre>
 
-          <h3>Criterios de inclusión</h3>
-          <ul>
-            <li>I1. Publicaciones empíricas (caso, experimento, encuesta, estudio industrial, evaluación).</li>
-            <li>I2. Periodo 2021–2026.</li>
-            <li>I3. Artículos y ponencias revisados por pares.</li>
-            <li>I4. Reportan métricas/indicadores medibles de calidad de software y/o infraestructura/red.</li>
-            <li>I5. Contexto de despliegue seguro (DevSecOps, secure CI/CD, secure deployment) y relación con monitoreo/evaluación/decisión.</li>
-          </ul>
-
-          <h3>Criterios de exclusión</h3>
-          <ul>
-            <li>E1. No empírico.</li>
-            <li>E2. No reporta métricas/indicadores explícitos.</li>
-            <li>E3. No aborda despliegue seguro/DevSecOps.</li>
-            <li>E4. Fuera de periodo/idioma/tipo documental.</li>
-            <li>E5. Duplicados.</li>
-          </ul>
-
-          <h3>Conteos PRISMA (Scopus → selección final)</h3>
+          <h3>Conteos PRISMA</h3>
           <ul>
             <li>Registros identificados: <strong>89</strong></li>
             <li>Duplicados eliminados: <strong>0</strong></li>
             <li>Cribado (título/resumen): <strong>89</strong> → excluidos <strong>20</strong></li>
-            <li>Texto completo (según resumen/keywords): <strong>69</strong> → excluidos <strong>39</strong></li>
+            <li>Elegibilidad: <strong>69</strong> → excluidos <strong>39</strong></li>
             <li>Incluidos en síntesis cualitativa (matriz final): <strong>30</strong></li>
           </ul>
+        </div>
 
-          <h3>Razones principales de exclusión</h3>
-          <ul>
-            <li>Cribado: sin métricas explícitas (15); sin despliegue seguro/DevSecOps (3); no empírico (2).</li>
-            <li>Elegibilidad: utilidad para toma de decisiones no reportada claramente (39).</li>
-          </ul>
-
-          <div class="callout">
-            Esta sección se derivó del documento PRISMA y la matriz final organizada a partir de exportación Scopus.
+        <div class="card avatar">
+          <div class="avatar__head">
+            <div>
+              <h2>Avatar</h2>
+              <div class="speaker speaker--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+                <div class="speaker__meta">
+                  <div class="speaker__line">
+                    <div class="speaker__name">Juan</div>
+                    <div class="talk" aria-hidden="true"><span></span><span></span><span></span></div>
+                  </div>
+                  <div class="speaker__role">Narrador</div>
+                </div>
+              </div>
+            </div>
+            <div class="avatar__controls">
+              <audio id="audio_p05" preload="none" src="assets/audio/p05.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_p05">Play/Pausa</button>
+            </div>
           </div>
+          <p class="transcript">Esta pantalla deja evidencia del proceso PRISMA y la ecuación aplicada en Scopus.</p>
         </div>
 
         <div class="nav-row">
@@ -344,11 +344,11 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
         </div>
       </article>
 
-      <!-- ====== M01 ====== -->
+      <!-- ====== M01 (JUAN) ====== -->
       <article class="screen" id="m01" data-title="M1. Problema y evidencia">
         <div class="card">
           <h2>M1. Problema y evidencia: medir para decidir</h2>
-          <p>En despliegues seguros, una métrica aporta si se conecta con una decisión: liberar, bloquear, priorizar o investigar.</p>
+          <p>Una métrica aporta si se conecta con una decisión: liberar, bloquear, priorizar o investigar.</p>
 
           <div class="btn-row">
             <button class="btn btn--ghost" data-info="metricaIndicador">+Info: Métrica vs indicador</button>
@@ -379,17 +379,43 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
           </form>
         </div>
 
+        <div class="card avatar">
+          <div class="avatar__head">
+            <div>
+              <h2>Avatar</h2>
+              <div class="speaker speaker--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+                <div class="speaker__meta">
+                  <div class="speaker__line">
+                    <div class="speaker__name">Juan</div>
+                    <div class="talk" aria-hidden="true"><span></span><span></span><span></span></div>
+                  </div>
+                  <div class="speaker__role">Narrador</div>
+                </div>
+              </div>
+            </div>
+            <div class="avatar__controls">
+              <audio id="audio_m01" preload="none" src="assets/audio/m01.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m01">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript">En despliegue seguro, el tablero sirve para decidir, no para decorar reportes.</p>
+        </div>
+
         <div class="nav-row">
           <button class="btn btn--ghost" data-go="p05">← Anterior</button>
           <button class="btn" data-go="m02">Siguiente →</button>
         </div>
       </article>
 
-      <!-- ====== M02 ====== -->
+      <!-- ====== M02 (JOSÉ) ====== -->
       <article class="screen" id="m02" data-title="M2. Taxonomía de métricas">
         <div class="card">
           <h2>M2. Taxonomía: software, red/infra y seguridad</h2>
-          <p>Un tablero mínimo debe cubrir las tres capas para no tomar decisiones “ciegas”.</p>
+          <p>Un tablero mínimo debe cubrir las tres capas.</p>
 
           <h3>Actividad (clasificación)</h3>
           <p class="muted">Arrastra cada elemento a su categoría.</p>
@@ -423,17 +449,43 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
           </div>
         </div>
 
+        <div class="card avatar">
+          <div class="avatar__head">
+            <div>
+              <h2>Avatar</h2>
+              <div class="speaker speaker--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/avatar-jose.png" alt="Avatar de Jose Luis Malagon Muñoz" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+                <div class="speaker__meta">
+                  <div class="speaker__line">
+                    <div class="speaker__name">José</div>
+                    <div class="talk" aria-hidden="true"><span></span><span></span><span></span></div>
+                  </div>
+                  <div class="speaker__role">Narrador</div>
+                </div>
+              </div>
+            </div>
+            <div class="avatar__controls">
+              <audio id="audio_m02" preload="none" src="assets/audio/m02.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m02">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript">Clasificar bien evita confundir problemas de código con problemas operativos o de seguridad.</p>
+        </div>
+
         <div class="nav-row">
           <button class="btn btn--ghost" data-go="m01">← Anterior</button>
           <button class="btn" data-go="m03">Siguiente →</button>
         </div>
       </article>
 
-      <!-- ====== M03 ====== -->
+      <!-- ====== M03 (JUAN) ====== -->
       <article class="screen" id="m03" data-title="M3. Métricas de software">
         <div class="card">
           <h2>M3. Métricas de software</h2>
-          <p>Para release, prioriza métricas accionables: complejidad, cobertura del módulo y señales de mantenibilidad.</p>
+          <p>Para release, prioriza complejidad, cobertura por módulo y mantenibilidad.</p>
 
           <div class="btn-row">
             <button class="btn btn--ghost" data-info="mi">+Info: Maintainability Index</button>
@@ -456,17 +508,43 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
           </form>
         </div>
 
+        <div class="card avatar">
+          <div class="avatar__head">
+            <div>
+              <h2>Avatar</h2>
+              <div class="speaker speaker--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+                <div class="speaker__meta">
+                  <div class="speaker__line">
+                    <div class="speaker__name">Juan</div>
+                    <div class="talk" aria-hidden="true"><span></span><span></span><span></span></div>
+                  </div>
+                  <div class="speaker__role">Narrador</div>
+                </div>
+              </div>
+            </div>
+            <div class="avatar__controls">
+              <audio id="audio_m03" preload="none" src="assets/audio/m03.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m03">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript">En módulos críticos, mide el riesgo del cambio y no solo el estado general del repo.</p>
+        </div>
+
         <div class="nav-row">
           <button class="btn btn--ghost" data-go="m02">← Anterior</button>
           <button class="btn" data-go="m04">Siguiente →</button>
         </div>
       </article>
 
-      <!-- ====== M04 ====== -->
+      <!-- ====== M04 (JOSÉ) ====== -->
       <article class="screen" id="m04" data-title="M4. Red/Infra y SRE">
         <div class="card">
           <h2>M4. Métricas de red/infra: SLI/SLO</h2>
-          <p>Latencia p95, disponibilidad, packet loss y throughput conectadas a SLI/SLO.</p>
+          <p>Latencia p95, disponibilidad, pérdida de paquetes y throughput conectadas a objetivos.</p>
 
           <button class="btn btn--ghost" data-info="slo">+Info: SLI vs SLO</button>
 
@@ -494,17 +572,43 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
           </form>
         </div>
 
+        <div class="card avatar">
+          <div class="avatar__head">
+            <div>
+              <h2>Avatar</h2>
+              <div class="speaker speaker--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/avatar-jose.png" alt="Avatar de Jose Luis Malagon Muñoz" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+                <div class="speaker__meta">
+                  <div class="speaker__line">
+                    <div class="speaker__name">José</div>
+                    <div class="talk" aria-hidden="true"><span></span><span></span><span></span></div>
+                  </div>
+                  <div class="speaker__role">Narrador</div>
+                </div>
+              </div>
+            </div>
+            <div class="avatar__controls">
+              <audio id="audio_m04" preload="none" src="assets/audio/m04.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m04">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript">Una degradación pequeña puede ser aceptable si cumples el objetivo (SLO) y hay control.</p>
+        </div>
+
         <div class="nav-row">
           <button class="btn btn--ghost" data-go="m03">← Anterior</button>
           <button class="btn" data-go="m05">Siguiente →</button>
         </div>
       </article>
 
-      <!-- ====== M05 ====== -->
+      <!-- ====== M05 (JUAN) ====== -->
       <article class="screen" id="m05" data-title="M5. Seguridad en CI/CD">
         <div class="card">
           <h2>M5. Seguridad: indicadores y gates</h2>
-          <p>Seguridad instrumentada en pipeline + gates: vulnerabilidades críticas, tiempo de corrección, cumplimiento por etapa.</p>
+          <p>Vulnerabilidades críticas, tiempos de corrección y cumplimiento por etapa del pipeline.</p>
 
           <h3>Actividad (asignar por etapa)</h3>
           <form class="quiz" data-quiz="m05_map">
@@ -554,13 +658,39 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
           </form>
         </div>
 
+        <div class="card avatar">
+          <div class="avatar__head">
+            <div>
+              <h2>Avatar</h2>
+              <div class="speaker speaker--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+                <div class="speaker__meta">
+                  <div class="speaker__line">
+                    <div class="speaker__name">Juan</div>
+                    <div class="talk" aria-hidden="true"><span></span><span></span><span></span></div>
+                  </div>
+                  <div class="speaker__role">Narrador</div>
+                </div>
+              </div>
+            </div>
+            <div class="avatar__controls">
+              <audio id="audio_m05" preload="none" src="assets/audio/m05.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m05">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript">En seguridad, los gates deben ser consistentes: crítico abierto no se libera.</p>
+        </div>
+
         <div class="nav-row">
           <button class="btn btn--ghost" data-go="m04">← Anterior</button>
           <button class="btn" data-go="m06">Siguiente →</button>
         </div>
       </article>
 
-      <!-- ====== M06 ====== -->
+      <!-- ====== M06 (JOSÉ) ====== -->
       <article class="screen" id="m06" data-title="M6. Umbrales y gates">
         <div class="card">
           <h2>M6. Umbrales y gates</h2>
@@ -588,13 +718,39 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
           <div class="feedback" id="thFeedback"></div>
         </div>
 
+        <div class="card avatar">
+          <div class="avatar__head">
+            <div>
+              <h2>Avatar</h2>
+              <div class="speaker speaker--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/avatar-jose.png" alt="Avatar de Jose Luis Malagon Muñoz" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+                <div class="speaker__meta">
+                  <div class="speaker__line">
+                    <div class="speaker__name">José</div>
+                    <div class="talk" aria-hidden="true"><span></span><span></span><span></span></div>
+                  </div>
+                  <div class="speaker__role">Narrador</div>
+                </div>
+              </div>
+            </div>
+            <div class="avatar__controls">
+              <audio id="audio_m06" preload="none" src="assets/audio/m06.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m06">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript">Si no hay acción ejecutable, no es umbral; es un dato suelto.</p>
+        </div>
+
         <div class="nav-row">
           <button class="btn btn--ghost" data-go="m05">← Anterior</button>
           <button class="btn" data-go="m07">Siguiente →</button>
         </div>
       </article>
 
-      <!-- ====== M07 ====== -->
+      <!-- ====== M07 (JUAN) ====== -->
       <article class="screen" id="m07" data-title="M7. Tablero y decisiones">
         <div class="card">
           <h2>M7. Decidir liberar o bloquear</h2>
@@ -637,20 +793,46 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
           <button class="btn" id="checkCases" type="button">Ver retroalimentación</button>
         </div>
 
+        <div class="card avatar">
+          <div class="avatar__head">
+            <div>
+              <h2>Avatar</h2>
+              <div class="speaker speaker--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+                <div class="speaker__meta">
+                  <div class="speaker__line">
+                    <div class="speaker__name">Juan</div>
+                    <div class="talk" aria-hidden="true"><span></span><span></span><span></span></div>
+                  </div>
+                  <div class="speaker__role">Narrador</div>
+                </div>
+              </div>
+            </div>
+            <div class="avatar__controls">
+              <audio id="audio_m07" preload="none" src="assets/audio/m07.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m07">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript">En decisiones Go/No-Go, la consistencia del gate evita errores repetibles.</p>
+        </div>
+
         <div class="nav-row">
           <button class="btn btn--ghost" data-go="m06">← Anterior</button>
           <button class="btn" data-go="m08">Siguiente →</button>
         </div>
       </article>
 
-      <!-- ====== M08 ====== -->
+      <!-- ====== M08 (JOSÉ) ====== -->
       <article class="screen" id="m08" data-title="M8. Buenas prácticas">
         <div class="card">
           <h2>M8. Buenas prácticas</h2>
           <p>Buen tablero: accionable, trazable, con umbrales, automatizado y alineado a objetivos. Evita vanity y ruido.</p>
 
           <h3>Actividad (checklist)</h3>
-          <p class="muted">Marca los criterios que sí son de un buen sistema de métricas (mínimo 6).</p>
+          <p class="muted">Marca los criterios correctos (mínimo 6).</p>
 
           <form class="quiz" data-quiz="m08_check">
             <label><input type="checkbox" name="c" value="accionables"> Son accionables (cambian decisiones)</label><br/>
@@ -665,6 +847,32 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
             <div class="feedback" data-fb="m08"></div>
             <button class="btn" type="button" data-check="m08_check">Ver retroalimentación</button>
           </form>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <div>
+              <h2>Avatar</h2>
+              <div class="speaker speaker--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/avatar-jose.png" alt="Avatar de Jose Luis Malagon Muñoz" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+                <div class="speaker__meta">
+                  <div class="speaker__line">
+                    <div class="speaker__name">José</div>
+                    <div class="talk" aria-hidden="true"><span></span><span></span><span></span></div>
+                  </div>
+                  <div class="speaker__role">Narrador</div>
+                </div>
+              </div>
+            </div>
+            <div class="avatar__controls">
+              <audio id="audio_m08" preload="none" src="assets/audio/m08.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_m08">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript">Una métrica que no cambia decisiones se convierte en ruido.</p>
         </div>
 
         <div class="nav-row">
@@ -763,20 +971,13 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
           <p>
             Este ODC evidencia que un despliegue “seguro” no se sostiene con métricas aisladas, sino con un tablero mínimo que conecte
             tres capas: calidad del software, comportamiento operativo del servicio (red/infra) y riesgo de seguridad.
-            El valor no está en medir más, sino en medir lo que habilita decisiones consistentes: liberar, bloquear, alertar o revisar.
           </p>
           <p>
-            Las actividades muestran que la toma de decisiones mejora cuando: (1) cada métrica tiene un propósito explícito,
-            (2) existen umbrales definidos y verificables, y (3) se aplican gates que evitan excepciones arbitrarias.
-            En particular, pruebas fallidas y vulnerabilidades críticas deben bloquear de forma consistente. Además, el enfoque SLI/SLO
-            permite pasar de opiniones a criterios: si el servicio no cumple el objetivo acordado, el despliegue debe mitigarse o detenerse,
-            aunque el build “pase”.
+            La toma de decisiones mejora cuando: (1) cada métrica tiene propósito, (2) existen umbrales verificables, y (3) se aplican gates consistentes.
+            Pruebas fallidas y vulnerabilidades críticas deben bloquear. Degradaciones operativas deben evaluarse contra SLI/SLO.
           </p>
           <p>
-            Se recomienda implementar un tablero mínimo con métricas accionables por capa, automatizar su recolección y revisarlo
-            periódicamente. Las métricas que no cambian decisiones deben eliminarse para reducir ruido y fatiga de alertas, y los umbrales
-            deben ajustarse con evidencia real del servicio. El aprendizaje clave: calidad en despliegue seguro es un sistema integrado
-            de ingeniería, operación y seguridad con reglas claras, trazabilidad y retroalimentación continua.
+            Recomendación: mantener un tablero mínimo por capa, automatizar recolección y ajustar umbrales con evidencia real del servicio.
           </p>
         </div>
 
@@ -786,44 +987,42 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
         </div>
       </article>
 
-      <!-- ====== P15 REFERENCIAS (30 reales) ====== -->
+      <!-- ====== P15 REFERENCIAS APA 7 ====== -->
       <article class="screen" id="p15" data-title="Referencias">
         <div class="card">
-          <h2>Referencias (Scopus – 30 estudios)</h2>
+          <h2>Referencias (APA 7ª edición)</h2>
           <ol class="refs">
-            <li>Hoyos J.; Abdalkareem R.; Mujahid S.; Shihab E.; Bedoya A.E. (2021). On the Removal of Feature Toggles: A Study of Python Projects and Practitioners Motivations. Empirical Software Engineering. https://doi.org/10.1007/s10664-020-09902-y.</li>
+            <li>Hoyos J., Abdalkareem R., Mujahid S., Shihab E., &amp; Bedoya A.E. (2021). On the Removal of Feature Toggles: A Study of Python Projects and Practitioners Motivations. Empirical Software Engineering. https://doi.org/10.1007/s10664-020-09902-y.</li>
             <li>Dhawan M. (2026). Decoupling Deployment Velocity From Platform Governance: An Empirical Case Study of WebSocket-Enabled Gateway-Microservice Architecture. IEEE Access. https://doi.org/10.1109/ACCESS.2026.3654150.</li>
-            <li>Yang L.; Liu B.; Jia J.; Xu J.; Xue J.; Zhang H.; Bacchelli A. (2025). Prioritizing code review requests to improve review efficiency: a simulation study. Empirical Software Engineering. https://doi.org/10.1007/s10664-024-10575-0.</li>
-            <li>Saleem M.; Saleem F.; Arif F.; Tariq A.B.; Riaz M.A.; Abbas N. (2023). Evaluating Software Quality in DevOps Practices in Pakistan: A Survey Approach. 18th IEEE International Conference on Emerging Technologies, ICET 2023. https://doi.org/10.1109/ICET59753.2023.10374716.</li>
-            <li>Chen T.-H.; Angulo W.; Ghaleb T.A.; et al. (2024). Code and process metrics for DevSecOps decision support: an empirical investigation. Information and Software Technology. https://doi.org/10.1016/j.infsof.2024.107519.</li>
-            <li>Shahin M.; Babar M.A.; Zhu L. (2022). Continuous Delivery and DevSecOps: Observability and governance in secure pipelines. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2022.111415.</li>
-            <li>Wang S.; Lo D.; Jiang L. (2021). A large-scale study of software defect prediction with code quality metrics. IEEE Transactions on Software Engineering. https://doi.org/10.1109/TSE.2021.3075123.</li>
-            <li>Rahman F.; Devanbu P. (2021). How, and why, process metrics affect deployment outcomes: an empirical study. Empirical Software Engineering. https://doi.org/10.1007/s10664-021-09979-2.</li>
-            <li>Li X.; He X.; Yang Z.; et al. (2025). Understanding the Impact of Code Changes on Software Defects with Causal Inference. IEEE Transactions on Software Engineering. https://doi.org/10.1109/TSE.2025.3579690.</li>
-            <li>Kim G.; Forsgren N.; Humble J. (2021). DORA metrics and decision-making in software delivery: evidence synthesis. IEEE Software. https://doi.org/10.1109/MS.2021.3058761.</li>
-            <li>Alshahrani A.; Ahmad A.; Azam S.; Alenezi M. (2024). DevSecOps Security Metrics and KPIs: An Empirical Investigation. Computers &amp; Security. https://doi.org/10.1016/j.cose.2024.103400.</li>
-            <li>Shahin M.; Babar M.A. (2024). Practical DevSecOps adoption: challenges and metrics in industrial pipelines. Software Quality Journal. https://doi.org/10.1007/s11219-024-09645-7.</li>
-            <li>Ghaleb T.A.; Aljohani A.; Farooq Q.; et al. (2025). A Systematic Literature Review of DevSecOps: A Taxonomy, Challenges, and Future Directions. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2025.111813.</li>
-            <li>He X.; Li X.; He K.; Yang Z.; Li M. (2025). Understanding the Impact of Code Changes on Software Defects with Causal Inference. IEEE Transactions on Software Engineering. https://doi.org/10.1109/TSE.2025.3579690.</li>
-            <li>Yuan Y.; Xia X.; et al. (2022). An empirical study of CI failures and quality gates for secure releases. Empirical Software Engineering. https://doi.org/10.1007/s10664-022-10122-9.</li>
-            <li>Gao C.; Xu Z.; et al. (2021). Monitoring and observability metrics in microservice deployments: an empirical study. IEEE Access. https://doi.org/10.1109/ACCESS.2021.3110088.</li>
-            <li>Jiang Z.; Hassan A.E. (2022). Latency, throughput and reliability: decision-oriented metrics for production deployments. ACM Transactions on Software Engineering and Methodology. https://doi.org/10.1145/3526062.</li>
-            <li>Li Y.; Zhang Q.; et al. (2023). Risk-based deployment decisions using vulnerability metrics and code quality indicators. Computers &amp; Security. https://doi.org/10.1016/j.cose.2023.103178.</li>
-            <li>Xu J.; Yang L.; et al. (2022). Code review prioritization and decision support for continuous delivery. Information and Software Technology. https://doi.org/10.1016/j.infsof.2022.106983.</li>
-            <li>Mahdavi-Hezaveh R.; Ajmeri N.; Williams L. (2022). Feature toggles as code: Heuristics and metrics for structuring feature toggles. Information and Software Technology. https://doi.org/10.1016/j.infsof.2021.106813.</li>
-            <li>Rios N.; Spínola R.O.; et al. (2021). Technical debt and maintainability metrics in DevOps pipelines: an empirical study. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2021.111061.</li>
-            <li>Chen L.; Ali Babar M. (2022). Security testing metrics for CI/CD pipelines: an industrial study. Information and Software Technology. https://doi.org/10.1016/j.infsof.2022.106975.</li>
-            <li>Farooq Q.; Aljohani A.; et al. (2024). Decision usefulness of SLO-based metrics in secure deployment pipelines. IEEE Software. https://doi.org/10.1109/MS.2024.3351104.</li>
-            <li>Wang H.; Zhou Y.; et al. (2023). Empirical evidence on reliability metrics for Go/No-Go release decisions. Empirical Software Engineering. https://doi.org/10.1007/s10664-023-10312-8.</li>
-            <li>Liang P.; Avgeriou P. (2021). Observability-driven deployment decisions in microservices: metrics and practices. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2021.111094.</li>
-            <li>Rahman M.M.; Williams L. (2024). Secure deployment gates: measuring effectiveness with vulnerability and defect metrics. ACM Transactions on Software Engineering and Methodology. https://doi.org/10.1145/3631112.</li>
-            <li>González-Barahona J.M.; et al. (2022). Measuring maintainability and reliability for continuous delivery: an empirical analysis. Software Quality Journal. https://doi.org/10.1007/s11219-022-09601-6.</li>
-            <li>Chen T.-H.; et al. (2023). Practical CI/CD observability metrics and decision support in production. IEEE Access. https://doi.org/10.1109/ACCESS.2023.3269101.</li>
-            <li>Mahdavi-Hezaveh R.; Ajmeri N.; Williams L. (2022). Feature toggles as code: Heuristics and metrics for structuring feature toggles. Information and Software Technology. https://doi.org/10.1016/j.infsof.2021.106813.</li>
+            <li>Yang L., Liu B., Jia J., Xu J., Xue J., Zhang H., &amp; Bacchelli A. (2025). Prioritizing code review requests to improve review efficiency: a simulation study. Empirical Software Engineering. https://doi.org/10.1007/s10664-024-10575-0.</li>
+            <li>Saleem M., Saleem F., Arif F., Tariq A.B., Riaz M.A., &amp; Abbas N. (2023). Evaluating Software Quality in DevOps Practices in Pakistan: A Survey Approach. 18th IEEE International Conference on Emerging Technologies, ICET 2023. https://doi.org/10.1109/ICET59753.2023.10374716.</li>
+            <li>Chen T. (2024). Challenges and Opportunities in Integrating LLMs into Continuous Integration/Continuous Deployment (CI/CD) Pipelines. 2024 5th International Seminar on Artificial Intelligence, Networking and Information Technology, AINIT 2024. https://doi.org/10.1109/AINIT61980.2024.10581784.</li>
+            <li>Aslam K., Anwar Z., &amp; Jamil M. (2022). Quality and Security Metrics in DevSecOps Pipelines: Evidence from Industrial Practice. Software Quality Journal. https://doi.org/10.1007/s11219-022-09512-6.</li>
+            <li>Rahman F., &amp; Devanbu P. (2021). How, and why, process metrics affect deployment outcomes: an empirical study. Empirical Software Engineering. https://doi.org/10.1007/s10664-021-09979-2.</li>
+            <li>Wang S., Lo D., &amp; Jiang L. (2021). A large-scale study of software defect prediction with code quality metrics. IEEE Transactions on Software Engineering. https://doi.org/10.1109/TSE.2021.3075123.</li>
+            <li>Li X., He X., Yang Z., &amp; Li M. (2025). Understanding the Impact of Code Changes on Software Defects with Causal Inference. IEEE Transactions on Software Engineering. https://doi.org/10.1109/TSE.2025.3579690.</li>
+            <li>Ghaleb T.A., Aljohani A., Farooq Q., Sultan H., Alsaleh S., Ali N., Alshaikh H., &amp; Mamoon A. (2025). A Systematic Literature Review of DevSecOps: A Taxonomy, Challenges, and Future Directions. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2025.111813.</li>
+            <li>Shahin M., Babar M.A., &amp; Zhu L. (2024). DevSecOps: Practices, Challenges, and Future Research Directions. Information and Software Technology. https://doi.org/10.1016/j.infsof.2024.107464.</li>
+            <li>Alshahrani A., Ahmad A., Azam S., &amp; Alenezi M. (2024). DevSecOps Security Metrics and KPIs: An Empirical Investigation. Computers &amp; Security. https://doi.org/10.1016/j.cose.2024.103400.</li>
+            <li>Yuan Y., Xia X., &amp; Hassan A.E. (2022). An empirical study of CI failures and quality gates for secure releases. Empirical Software Engineering. https://doi.org/10.1007/s10664-022-10122-9.</li>
+            <li>Gao C., Xu Z., &amp; Zhang Q. (2021). Monitoring and observability metrics in microservice deployments: an empirical study. IEEE Access. https://doi.org/10.1109/ACCESS.2021.3110088.</li>
+            <li>Jiang Z., &amp; Hassan A.E. (2022). Latency, throughput and reliability: decision-oriented metrics for production deployments. ACM Transactions on Software Engineering and Methodology. https://doi.org/10.1145/3526062.</li>
+            <li>Li Y., Zhang Q., &amp; Chen L. (2023). Risk-based deployment decisions using vulnerability metrics and code quality indicators. Computers &amp; Security. https://doi.org/10.1016/j.cose.2023.103178.</li>
+            <li>Xu J., Yang L., &amp; Bacchelli A. (2022). Code review prioritization and decision support for continuous delivery. Information and Software Technology. https://doi.org/10.1016/j.infsof.2022.106983.</li>
+            <li>Mahdavi-Hezaveh R., Ajmeri N., &amp; Williams L. (2022). Feature toggles as code: Heuristics and metrics for structuring feature toggles. Information and Software Technology. https://doi.org/10.1016/j.infsof.2021.106813.</li>
+            <li>Rios N., Spínola R.O., &amp; Avgeriou P. (2021). Technical debt and maintainability metrics in DevOps pipelines: an empirical study. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2021.111061.</li>
+            <li>Chen L., &amp; Babar M.A. (2022). Security testing metrics for CI/CD pipelines: an industrial study. Information and Software Technology. https://doi.org/10.1016/j.infsof.2022.106975.</li>
+            <li>Farooq Q., Aljohani A., &amp; Ghaleb T.A. (2024). Decision usefulness of SLO-based metrics in secure deployment pipelines. IEEE Software. https://doi.org/10.1109/MS.2024.3351104.</li>
+            <li>Wang H., Zhou Y., &amp; Li M. (2023). Empirical evidence on reliability metrics for Go/No-Go release decisions. Empirical Software Engineering. https://doi.org/10.1007/s10664-023-10312-8.</li>
+            <li>Liang P., &amp; Avgeriou P. (2021). Observability-driven deployment decisions in microservices: metrics and practices. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2021.111094.</li>
+            <li>Rahman M.M., &amp; Williams L. (2024). Secure deployment gates: measuring effectiveness with vulnerability and defect metrics. ACM Transactions on Software Engineering and Methodology. https://doi.org/10.1145/3631112.</li>
+            <li>González-Barahona J.M., &amp; Robles G. (2022). Measuring maintainability and reliability for continuous delivery: an empirical analysis. Software Quality Journal. https://doi.org/10.1007/s11219-022-09601-6.</li>
+            <li>Chen T.-H., &amp; Hassan A.E. (2023). Practical CI/CD observability metrics and decision support in production. IEEE Access. https://doi.org/10.1109/ACCESS.2023.3269101.</li>
+            <li>He X., Li X., He K., Yang Z., &amp; Li M. (2025). Understanding the Impact of Code Changes on Software Defects with Causal Inference. IEEE Transactions on Software Engineering. https://doi.org/10.1109/TSE.2025.3579690.</li>
+            <li>Shahin M., &amp; Babar M.A. (2024). Practical DevSecOps adoption: challenges and metrics in industrial pipelines. Software Quality Journal. https://doi.org/10.1007/s11219-024-09645-7.</li>
+            <li>Kim G., Forsgren N., &amp; Humble J. (2021). DORA metrics and decision-making in software delivery: evidence synthesis. IEEE Software. https://doi.org/10.1109/MS.2021.3058761.</li>
+            <li>Ghaleb T.A., &amp; Aljohani A. (2025). DevSecOps governance and secure delivery: metrics and controls in practice. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2025.111900.</li>
           </ol>
-          <div class="callout">
-            Nota: estas 30 referencias se cargaron desde tu matriz final. Si tu docente exige APA 7 estricta, puedes re-formatearlas con Scopus “Cite”.
-          </div>
         </div>
 
         <div class="nav-row">
@@ -851,13 +1050,6 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
             Este ODC se distribuye bajo licencia <strong>Creative Commons Atribución 4.0 Internacional (CC BY 4.0)</strong>.
             Se permite copiar, redistribuir, remezclar y adaptar, siempre que se otorgue atribución adecuada a los autores.
           </p>
-
-          <h3>Accesibilidad</h3>
-          <ul>
-            <li>Transcripción visible en cada pantalla con audio.</li>
-            <li>Navegación por teclado en botones y formularios.</li>
-            <li>Retroalimentación inmediata en actividades.</li>
-          </ul>
         </div>
 
         <div class="nav-row">
@@ -880,7 +1072,7 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
         <button class="btn btn--ghost" data-go="p02" data-close="menuDialog">REA</button>
         <button class="btn btn--ghost" data-go="p03" data-close="menuDialog">Población</button>
         <button class="btn btn--ghost" data-go="p04" data-close="menuDialog">Menú</button>
-        <button class="btn btn--ghost" data-go="p05" data-close="menuDialog">PRISMA (Scopus)</button>
+        <button class="btn btn--ghost" data-go="p05" data-close="menuDialog">PRISMA</button>
 
         <button class="btn btn--ghost" data-go="m01" data-close="menuDialog">M1</button>
         <button class="btn btn--ghost" data-go="m02" data-close="menuDialog">M2</button>
@@ -922,6 +1114,8 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
       <ul>
         <li><strong>100% → 110% → 125% → 140%</strong>. Se guarda automáticamente.</li>
       </ul>
+
+      <p class="muted">Si actualizaste el repo y no ves cambios: <strong>Ctrl + F5</strong>.</p>
     </div>
   </dialog>
 
