@@ -74,7 +74,8 @@ const INFO = {
 
 /* ===== NAV ===== */
 function setActiveScreen(id) {
-  stopAllAudio(); // audio se corta al cambiar pantalla
+  // ✅ corta audio SIEMPRE al cambiar de pantalla
+  stopAllAudio();
 
   screens.forEach(s => s.classList.toggle("is-active", s.id === id));
   sideItems.forEach(b => b.classList.toggle("is-active", b.dataset.go === id));
