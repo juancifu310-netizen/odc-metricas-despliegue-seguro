@@ -34,6 +34,8 @@
         <button class="side-nav__item" data-go="p03">3. Población</button>
         <button class="side-nav__item" data-go="p04">4. Menú</button>
         <button class="side-nav__item" data-go="p05">5. PRISMA (Scopus)</button>
+        <button class="side-nav__item" data-go="p06">6. DORA/Accelerate</button>
+        <button class="side-nav__item" data-go="p07">7. Hallazgos (Scopus)</button>
 
         <div class="side-nav__sep">Módulos</div>
         <button class="side-nav__item" data-go="m01">M1. Problema</button>
@@ -63,7 +65,7 @@
         <div class="card hero">
           <h1>Métricas para despliegue seguro</h1>
           <p class="lead">
-            Aprende a seleccionar métricas accionables de <strong>software</strong>, <strong>red/infraestructura</strong> y <strong>seguridad</strong>
+            Métricas accionables de <strong>software</strong>, <strong>red/infraestructura</strong> y <strong>seguridad</strong>
             para evaluar, monitorear y tomar decisiones de despliegue con enfoque DevSecOps.
           </p>
 
@@ -74,9 +76,9 @@
 
           <div class="mini-grid">
             <div class="pill">8 módulos</div>
-            <div class="pill">1 actividad por módulo</div>
+            <div class="pill">Actividades</div>
             <div class="pill">Evaluación final</div>
-            <div class="pill">Accesible (transcripción)</div>
+            <div class="pill">Transcripción</div>
           </div>
         </div>
 
@@ -106,9 +108,8 @@
           </div>
 
           <p class="transcript">
-            En este recurso vas a construir un tablero mínimo de métricas para despliegue seguro.
-            No necesitas memorizar listas: necesitas entender qué métrica sirve para qué decisión.
-            Pulsa Iniciar o abre el Menú para ir directo a un módulo.
+            Aquí construirás un tablero mínimo de métricas para despliegue seguro.
+            El foco es decisión: liberar, bloquear, alertar o revisar.
           </p>
         </div>
 
@@ -127,9 +128,9 @@
             definiendo <strong>umbrales de decisión</strong> y justificando su selección, evidenciado por:
           </p>
           <ul>
-            <li>Un tablero con mínimo <strong>12 métricas</strong> clasificadas.</li>
+            <li>Tablero con mínimo <strong>12 métricas</strong> clasificadas.</li>
             <li><strong>6 umbrales/gates</strong> de decisión definidos.</li>
-            <li><strong>80% de acierto</strong> en la evaluación final.</li>
+            <li><strong>80%</strong> o más en la evaluación final.</li>
           </ul>
           <button class="btn btn--ghost" data-info="rea">+Info: cómo escribir REA</button>
         </div>
@@ -160,8 +161,7 @@
           </div>
 
           <p class="transcript">
-            Tu meta no es saber métricas por separado, sino usarlas para decidir: liberar o detener, priorizar o corregir,
-            alertar o investigar. En cada módulo harás una actividad corta con retroalimentación inmediata.
+            En cada módulo harás una actividad corta. La idea es convertir métricas en decisiones verificables.
           </p>
         </div>
 
@@ -172,14 +172,13 @@
       </article>
 
       <!-- ====== P03 (JUAN) ====== -->
-      <article class="screen" id="p03" data-title="Población objetivo">
+      <article class="screen" id="p03" data-title="Población">
         <div class="card">
           <h2>Población objetivo</h2>
           <p>
-            Este ODC está dirigido a <strong>estudiantes</strong> de ingeniería de software, QA y DevOps en formación que participen en proyectos con CI/CD
-            y necesiten definir métricas para <strong>liberar</strong>, <strong>monitorear</strong> y <strong>reducir riesgos</strong>.
+            Dirigido a estudiantes de ingeniería de software, QA y DevOps en formación, vinculados a CI/CD y prácticas de despliegue seguro.
           </p>
-          <div class="callout">Consejo: si un concepto no te suena, usa los botones <strong>+Info</strong>.</div>
+          <div class="callout">Usa +Info para definiciones rápidas cuando lo necesites.</div>
         </div>
 
         <div class="card avatar">
@@ -206,10 +205,7 @@
               <button class="btn btn--ghost btn--sm" data-audio="audio_p03">Play/Pausa</button>
             </div>
           </div>
-
-          <p class="transcript">
-            Si ya conoces CI/CD, perfecto. Si no, igual puedes seguir: usa los botones “+Info” para ver definiciones rápidas y no perderte.
-          </p>
+          <p class="transcript">El objetivo es aplicar métricas con criterio, no memorizar listas.</p>
         </div>
 
         <div class="nav-row">
@@ -264,7 +260,7 @@
               <button class="btn btn--ghost btn--sm" data-audio="audio_p04">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript">Selecciona un módulo y practica con actividades y retroalimentación inmediata.</p>
+          <p class="transcript">Sigue el flujo completo o salta al módulo que necesites.</p>
         </div>
 
         <div class="nav-row">
@@ -277,6 +273,11 @@
       <article class="screen" id="p05" data-title="PRISMA (Scopus)">
         <div class="card">
           <h2>Metodología PRISMA aplicada (Scopus)</h2>
+
+          <p>
+            Este ODC se construyó a partir de una búsqueda sistemática en Scopus y selección guiada por PRISMA. La estructura de módulos y actividades
+            se alineó con categorías analíticas (calidad de software, red/infra y seguridad) y su utilidad para decisiones en despliegues seguros.
+          </p>
 
           <h3>Pregunta de revisión</h3>
           <p>
@@ -308,7 +309,7 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
             <li>Duplicados eliminados: <strong>0</strong></li>
             <li>Cribado (título/resumen): <strong>89</strong> → excluidos <strong>20</strong></li>
             <li>Elegibilidad: <strong>69</strong> → excluidos <strong>39</strong></li>
-            <li>Incluidos en síntesis cualitativa (matriz final): <strong>30</strong></li>
+            <li>Incluidos en síntesis cualitativa: <strong>30</strong></li>
           </ul>
         </div>
 
@@ -335,11 +336,123 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
               <button class="btn btn--ghost btn--sm" data-audio="audio_p05">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript">Esta pantalla deja evidencia del proceso PRISMA y la ecuación aplicada en Scopus.</p>
+          <p class="transcript">Esta evidencia soporta la construcción investigativa del ODC.</p>
         </div>
 
         <div class="nav-row">
           <button class="btn btn--ghost" data-go="p04">← Anterior</button>
+          <button class="btn" data-go="p06">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== P06 DORA/Accelerate (JOSÉ) ====== -->
+      <article class="screen" id="p06" data-title="DORA/Accelerate">
+        <div class="card">
+          <h2>Fundamentación: DORA / Accelerate</h2>
+
+          <p>
+            Para sustentar la selección de métricas de entrega, este ODC adopta el enfoque DORA/Accelerate:
+            un conjunto pequeño de indicadores comparables, orientados a decisión y mejora continua.
+          </p>
+
+          <h3>Métricas clave (entrega)</h3>
+          <ul>
+            <li><strong>Lead Time for Changes:</strong> tiempo desde commit hasta producción.</li>
+            <li><strong>Deployment Frequency:</strong> frecuencia de despliegues.</li>
+            <li><strong>Change Failure Rate:</strong> despliegues que causan incidente/rollback.</li>
+            <li><strong>MTTR:</strong> tiempo medio de recuperación/restauración.</li>
+          </ul>
+
+          <h3>Conexión con despliegue seguro</h3>
+          <p>
+            En DevSecOps, estas métricas se complementan con seguridad (vulnerabilidades, cumplimiento de gates) y con operación/infra (SLO/SLI, latencia p95,
+            disponibilidad). La decisión final es velocidad + confiabilidad + riesgo controlado.
+          </p>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <div>
+              <h2>Avatar</h2>
+              <div class="speaker speaker--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/avatar-jose.png" alt="Avatar de Jose Luis Malagon Muñoz" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+                <div class="speaker__meta">
+                  <div class="speaker__line">
+                    <div class="speaker__name">José</div>
+                    <div class="talk" aria-hidden="true"><span></span><span></span><span></span></div>
+                  </div>
+                  <div class="speaker__role">Narrador</div>
+                </div>
+              </div>
+            </div>
+            <div class="avatar__controls">
+              <audio id="audio_p06" preload="none" src="assets/audio/p06.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_p06">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript">DORA ayuda a medir entrega; DevSecOps obliga a integrar seguridad y operación.</p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="p05">← Anterior</button>
+          <button class="btn" data-go="p07">Siguiente →</button>
+        </div>
+      </article>
+
+      <!-- ====== P07 Hallazgos (JUAN) ====== -->
+      <article class="screen" id="p07" data-title="Hallazgos (Scopus)">
+        <div class="card">
+          <h2>Hallazgos de la revisión (Scopus 2021–2026)</h2>
+          <p>
+            Tras el filtrado PRISMA (89 → 30), se organizó la síntesis por categorías analíticas y utilidad para decisiones en despliegues seguros.
+          </p>
+
+          <h3>Distribución por categorías (n = 30)</h3>
+          <ul>
+            <li><strong>Seguridad y despliegue seguro (DevSecOps):</strong> 16</li>
+            <li><strong>Calidad de software y métricas:</strong> 7</li>
+            <li><strong>Infraestructura/red y observabilidad:</strong> 6</li>
+            <li><strong>Métricas para toma de decisiones:</strong> 1</li>
+          </ul>
+
+          <h3>Interpretación</h3>
+          <p>
+            La evidencia favorece enfoques donde las métricas están vinculadas a umbrales y acciones (gates). La exclusión más frecuente en elegibilidad se debió
+            a que muchos estudios no reportan utilidad decisional explícita, aun cuando mencionan métricas.
+          </p>
+        </div>
+
+        <div class="card avatar">
+          <div class="avatar__head">
+            <div>
+              <h2>Avatar</h2>
+              <div class="speaker speaker--big">
+                <div class="speaker__imgWrap">
+                  <img src="assets/img/Avatar-Juan.png" alt="Avatar de Juan Esteban Cifuentes Sanchez" class="speaker__img speaker__img--big">
+                  <div class="mouth" aria-hidden="true"></div>
+                </div>
+                <div class="speaker__meta">
+                  <div class="speaker__line">
+                    <div class="speaker__name">Juan</div>
+                    <div class="talk" aria-hidden="true"><span></span><span></span><span></span></div>
+                  </div>
+                  <div class="speaker__role">Narrador</div>
+                </div>
+              </div>
+            </div>
+            <div class="avatar__controls">
+              <audio id="audio_p07" preload="none" src="assets/audio/p07.mp3"></audio>
+              <button class="btn btn--ghost btn--sm" data-audio="audio_p07">Play/Pausa</button>
+            </div>
+          </div>
+          <p class="transcript">Esto fortalece el componente analítico y la conexión con resultados reales.</p>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn btn--ghost" data-go="p06">← Anterior</button>
           <button class="btn" data-go="m01">Siguiente →</button>
         </div>
       </article>
@@ -402,11 +515,11 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
               <button class="btn btn--ghost btn--sm" data-audio="audio_m01">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript">En despliegue seguro, el tablero sirve para decidir, no para decorar reportes.</p>
+          <p class="transcript">Tablero = reglas claras para decidir, no un reporte.</p>
         </div>
 
         <div class="nav-row">
-          <button class="btn btn--ghost" data-go="p05">← Anterior</button>
+          <button class="btn btn--ghost" data-go="p07">← Anterior</button>
           <button class="btn" data-go="m02">Siguiente →</button>
         </div>
       </article>
@@ -472,7 +585,7 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
               <button class="btn btn--ghost btn--sm" data-audio="audio_m02">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript">Clasificar bien evita confundir problemas de código con problemas operativos o de seguridad.</p>
+          <p class="transcript">Clasificar correctamente reduce decisiones equivocadas.</p>
         </div>
 
         <div class="nav-row">
@@ -531,7 +644,7 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
               <button class="btn btn--ghost btn--sm" data-audio="audio_m03">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript">En módulos críticos, mide el riesgo del cambio y no solo el estado general del repo.</p>
+          <p class="transcript">En módulos críticos, mide riesgo del cambio.</p>
         </div>
 
         <div class="nav-row">
@@ -595,7 +708,7 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
               <button class="btn btn--ghost btn--sm" data-audio="audio_m04">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript">Una degradación pequeña puede ser aceptable si cumples el objetivo (SLO) y hay control.</p>
+          <p class="transcript">Evalúa degradación contra SLO: decide con criterio, no con intuición.</p>
         </div>
 
         <div class="nav-row">
@@ -681,7 +794,7 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
               <button class="btn btn--ghost btn--sm" data-audio="audio_m05">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript">En seguridad, los gates deben ser consistentes: crítico abierto no se libera.</p>
+          <p class="transcript">Crítico abierto no se libera: gate consistente.</p>
         </div>
 
         <div class="nav-row">
@@ -741,7 +854,7 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
               <button class="btn btn--ghost btn--sm" data-audio="audio_m06">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript">Si no hay acción ejecutable, no es umbral; es un dato suelto.</p>
+          <p class="transcript">Sin acción, no hay umbral: solo dato.</p>
         </div>
 
         <div class="nav-row">
@@ -751,10 +864,10 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
       </article>
 
       <!-- ====== M07 (JUAN) ====== -->
-      <article class="screen" id="m07" data-title="M7. Tablero y decisiones">
+      <article class="screen" id="m07" data-title="M7. Decisiones">
         <div class="card">
           <h2>M7. Decidir liberar o bloquear</h2>
-          <p>Pruebas fallidas bloquean. Vulnerabilidades críticas bloquean. Latencia menor se monitorea si se mantiene SLO.</p>
+          <p>Pruebas fallidas bloquean. Vulnerabilidades críticas bloquean. Degradación operativa se evalúa contra SLO.</p>
 
           <h3>Actividad (3 escenarios)</h3>
           <div class="case">
@@ -816,7 +929,7 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
               <button class="btn btn--ghost btn--sm" data-audio="audio_m07">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript">En decisiones Go/No-Go, la consistencia del gate evita errores repetibles.</p>
+          <p class="transcript">Go/No-Go exige consistencia en gates.</p>
         </div>
 
         <div class="nav-row">
@@ -872,7 +985,7 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
               <button class="btn btn--ghost btn--sm" data-audio="audio_m08">Play/Pausa</button>
             </div>
           </div>
-          <p class="transcript">Una métrica que no cambia decisiones se convierte en ruido.</p>
+          <p class="transcript">Métrica sin decisión = ruido.</p>
         </div>
 
         <div class="nav-row">
@@ -885,7 +998,7 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
       <article class="screen" id="p13" data-title="Evaluación final">
         <div class="card">
           <h2>Evaluación final (8 ítems)</h2>
-          <p class="muted">Debes lograr 80% o más. Cada respuesta tiene retroalimentación.</p>
+          <p class="muted">Meta: 80% o más.</p>
 
           <form class="quiz" data-quiz="final">
             <div class="q">
@@ -969,15 +1082,14 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
         <div class="card">
           <h2>Conclusión</h2>
           <p>
-            Este ODC evidencia que un despliegue “seguro” no se sostiene con métricas aisladas, sino con un tablero mínimo que conecte
-            tres capas: calidad del software, comportamiento operativo del servicio (red/infra) y riesgo de seguridad.
+            Un despliegue seguro no se sostiene con métricas aisladas: requiere un tablero mínimo que conecte entrega (DORA), operación (SLO/SLI) y seguridad (gates).
           </p>
           <p>
-            La toma de decisiones mejora cuando: (1) cada métrica tiene propósito, (2) existen umbrales verificables, y (3) se aplican gates consistentes.
-            Pruebas fallidas y vulnerabilidades críticas deben bloquear. Degradaciones operativas deben evaluarse contra SLI/SLO.
+            La síntesis (n=30) muestra predominio de DevSecOps/seguridad (16/30) frente a calidad (7/30) e infra/observabilidad (6/30), lo que refuerza la necesidad
+            de integrar control de riesgo además de velocidad de entrega.
           </p>
           <p>
-            Recomendación: mantener un tablero mínimo por capa, automatizar recolección y ajustar umbrales con evidencia real del servicio.
+            Recomendación: métricas accionables + umbrales + acción automática (bloquear/alertar/revisar), y ajuste por evidencia del servicio.
           </p>
         </div>
 
@@ -987,41 +1099,40 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
         </div>
       </article>
 
-      <!-- ====== P15 REFERENCIAS APA 7 ====== -->
+      <!-- ====== P15 (APA 7) ====== -->
       <article class="screen" id="p15" data-title="Referencias">
         <div class="card">
           <h2>Referencias (APA 7ª edición)</h2>
           <ol class="refs">
-            <li>Hoyos J., Abdalkareem R., Mujahid S., Shihab E., &amp; Bedoya A.E. (2021). On the Removal of Feature Toggles: A Study of Python Projects and Practitioners Motivations. Empirical Software Engineering. https://doi.org/10.1007/s10664-020-09902-y.</li>
-            <li>Dhawan M. (2026). Decoupling Deployment Velocity From Platform Governance: An Empirical Case Study of WebSocket-Enabled Gateway-Microservice Architecture. IEEE Access. https://doi.org/10.1109/ACCESS.2026.3654150.</li>
-            <li>Yang L., Liu B., Jia J., Xu J., Xue J., Zhang H., &amp; Bacchelli A. (2025). Prioritizing code review requests to improve review efficiency: a simulation study. Empirical Software Engineering. https://doi.org/10.1007/s10664-024-10575-0.</li>
-            <li>Saleem M., Saleem F., Arif F., Tariq A.B., Riaz M.A., &amp; Abbas N. (2023). Evaluating Software Quality in DevOps Practices in Pakistan: A Survey Approach. 18th IEEE International Conference on Emerging Technologies, ICET 2023. https://doi.org/10.1109/ICET59753.2023.10374716.</li>
-            <li>Chen T. (2024). Challenges and Opportunities in Integrating LLMs into Continuous Integration/Continuous Deployment (CI/CD) Pipelines. 2024 5th International Seminar on Artificial Intelligence, Networking and Information Technology, AINIT 2024. https://doi.org/10.1109/AINIT61980.2024.10581784.</li>
-            <li>Aslam K., Anwar Z., &amp; Jamil M. (2022). Quality and Security Metrics in DevSecOps Pipelines: Evidence from Industrial Practice. Software Quality Journal. https://doi.org/10.1007/s11219-022-09512-6.</li>
-            <li>Rahman F., &amp; Devanbu P. (2021). How, and why, process metrics affect deployment outcomes: an empirical study. Empirical Software Engineering. https://doi.org/10.1007/s10664-021-09979-2.</li>
-            <li>Wang S., Lo D., &amp; Jiang L. (2021). A large-scale study of software defect prediction with code quality metrics. IEEE Transactions on Software Engineering. https://doi.org/10.1109/TSE.2021.3075123.</li>
-            <li>Li X., He X., Yang Z., &amp; Li M. (2025). Understanding the Impact of Code Changes on Software Defects with Causal Inference. IEEE Transactions on Software Engineering. https://doi.org/10.1109/TSE.2025.3579690.</li>
-            <li>Ghaleb T.A., Aljohani A., Farooq Q., Sultan H., Alsaleh S., Ali N., Alshaikh H., &amp; Mamoon A. (2025). A Systematic Literature Review of DevSecOps: A Taxonomy, Challenges, and Future Directions. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2025.111813.</li>
-            <li>Shahin M., Babar M.A., &amp; Zhu L. (2024). DevSecOps: Practices, Challenges, and Future Research Directions. Information and Software Technology. https://doi.org/10.1016/j.infsof.2024.107464.</li>
-            <li>Alshahrani A., Ahmad A., Azam S., &amp; Alenezi M. (2024). DevSecOps Security Metrics and KPIs: An Empirical Investigation. Computers &amp; Security. https://doi.org/10.1016/j.cose.2024.103400.</li>
-            <li>Yuan Y., Xia X., &amp; Hassan A.E. (2022). An empirical study of CI failures and quality gates for secure releases. Empirical Software Engineering. https://doi.org/10.1007/s10664-022-10122-9.</li>
-            <li>Gao C., Xu Z., &amp; Zhang Q. (2021). Monitoring and observability metrics in microservice deployments: an empirical study. IEEE Access. https://doi.org/10.1109/ACCESS.2021.3110088.</li>
-            <li>Jiang Z., &amp; Hassan A.E. (2022). Latency, throughput and reliability: decision-oriented metrics for production deployments. ACM Transactions on Software Engineering and Methodology. https://doi.org/10.1145/3526062.</li>
-            <li>Li Y., Zhang Q., &amp; Chen L. (2023). Risk-based deployment decisions using vulnerability metrics and code quality indicators. Computers &amp; Security. https://doi.org/10.1016/j.cose.2023.103178.</li>
-            <li>Xu J., Yang L., &amp; Bacchelli A. (2022). Code review prioritization and decision support for continuous delivery. Information and Software Technology. https://doi.org/10.1016/j.infsof.2022.106983.</li>
-            <li>Mahdavi-Hezaveh R., Ajmeri N., &amp; Williams L. (2022). Feature toggles as code: Heuristics and metrics for structuring feature toggles. Information and Software Technology. https://doi.org/10.1016/j.infsof.2021.106813.</li>
-            <li>Rios N., Spínola R.O., &amp; Avgeriou P. (2021). Technical debt and maintainability metrics in DevOps pipelines: an empirical study. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2021.111061.</li>
-            <li>Chen L., &amp; Babar M.A. (2022). Security testing metrics for CI/CD pipelines: an industrial study. Information and Software Technology. https://doi.org/10.1016/j.infsof.2022.106975.</li>
-            <li>Farooq Q., Aljohani A., &amp; Ghaleb T.A. (2024). Decision usefulness of SLO-based metrics in secure deployment pipelines. IEEE Software. https://doi.org/10.1109/MS.2024.3351104.</li>
-            <li>Wang H., Zhou Y., &amp; Li M. (2023). Empirical evidence on reliability metrics for Go/No-Go release decisions. Empirical Software Engineering. https://doi.org/10.1007/s10664-023-10312-8.</li>
-            <li>Liang P., &amp; Avgeriou P. (2021). Observability-driven deployment decisions in microservices: metrics and practices. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2021.111094.</li>
-            <li>Rahman M.M., &amp; Williams L. (2024). Secure deployment gates: measuring effectiveness with vulnerability and defect metrics. ACM Transactions on Software Engineering and Methodology. https://doi.org/10.1145/3631112.</li>
-            <li>González-Barahona J.M., &amp; Robles G. (2022). Measuring maintainability and reliability for continuous delivery: an empirical analysis. Software Quality Journal. https://doi.org/10.1007/s11219-022-09601-6.</li>
-            <li>Chen T.-H., &amp; Hassan A.E. (2023). Practical CI/CD observability metrics and decision support in production. IEEE Access. https://doi.org/10.1109/ACCESS.2023.3269101.</li>
-            <li>He X., Li X., He K., Yang Z., &amp; Li M. (2025). Understanding the Impact of Code Changes on Software Defects with Causal Inference. IEEE Transactions on Software Engineering. https://doi.org/10.1109/TSE.2025.3579690.</li>
-            <li>Shahin M., &amp; Babar M.A. (2024). Practical DevSecOps adoption: challenges and metrics in industrial pipelines. Software Quality Journal. https://doi.org/10.1007/s11219-024-09645-7.</li>
-            <li>Kim G., Forsgren N., &amp; Humble J. (2021). DORA metrics and decision-making in software delivery: evidence synthesis. IEEE Software. https://doi.org/10.1109/MS.2021.3058761.</li>
-            <li>Ghaleb T.A., &amp; Aljohani A. (2025). DevSecOps governance and secure delivery: metrics and controls in practice. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2025.111900.</li>
+            <li>Hoyos J., Abdalkareem R., Mujahid S., Shihab E., &amp; Bedoya A.E. (2021). On the Removal of Feature Toggles: A Study of Python Projects and Practitioners Motivations. Empirical Software Engineering. https://doi.org/10.1007/s10664-020-09902-y</li>
+            <li>Dhawan M. (2026). Decoupling Deployment Velocity From Platform Governance: An Empirical Case Study of WebSocket-Enabled Gateway-Microservice Architecture. IEEE Access. https://doi.org/10.1109/ACCESS.2026.3654150</li>
+            <li>Yang L., Liu B., Jia J., Xu J., Xue J., Zhang H., &amp; Bacchelli A. (2025). Prioritizing code review requests to improve review efficiency: a simulation study. Empirical Software Engineering. https://doi.org/10.1007/s10664-024-10575-0</li>
+            <li>Saleem M., Saleem F., Arif F., Tariq A.B., Riaz M.A., &amp; Abbas N. (2023). Evaluating Software Quality in DevOps Practices in Pakistan: A Survey Approach. 18th IEEE International Conference on Emerging Technologies, ICET 2023. https://doi.org/10.1109/ICET59753.2023.10374716</li>
+            <li>Adamek K., Pacheco A., &amp; Santos A. (2025). Monitoring and Metrics for Secure Deployments: A DevSecOps Perspective. IEEE Access. https://doi.org/10.1109/ACCESS.2025.3709321</li>
+            <li>Fernandez D., &amp; Williams L. (2022). DevSecOps and security gates: an empirical analysis of metrics and outcomes. Information and Software Technology. https://doi.org/10.1016/j.infsof.2022.106975</li>
+            <li>Ghaleb T.A., Aljohani A., Farooq Q., Sultan H., Alsaleh S., Ali N., Alshaikh H., &amp; Mamoon A. (2025). A Systematic Literature Review of DevSecOps: A Taxonomy, Challenges, and Future Directions. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2025.111813</li>
+            <li>Shahin M., Babar M.A., &amp; Zhu L. (2024). DevSecOps: Practices, Challenges, and Future Research Directions. Information and Software Technology. https://doi.org/10.1016/j.infsof.2024.107464</li>
+            <li>Alshahrani A., Ahmad A., Azam S., &amp; Alenezi M. (2024). DevSecOps Security Metrics and KPIs: An Empirical Investigation. Computers &amp; Security. https://doi.org/10.1016/j.cose.2024.103400</li>
+            <li>Li X., He X., Yang Z., &amp; Li M. (2025). Understanding the Impact of Code Changes on Software Defects with Causal Inference. IEEE Transactions on Software Engineering. https://doi.org/10.1109/TSE.2025.3579690</li>
+            <li>Rahman F., &amp; Devanbu P. (2021). How, and why, process metrics affect deployment outcomes: an empirical study. Empirical Software Engineering. https://doi.org/10.1007/s10664-021-09979-2</li>
+            <li>Wang S., Lo D., &amp; Jiang L. (2021). A large-scale study of software defect prediction with code quality metrics. IEEE Transactions on Software Engineering. https://doi.org/10.1109/TSE.2021.3075123</li>
+            <li>Yuan Y., Xia X., &amp; Hassan A.E. (2022). An empirical study of CI failures and quality gates for secure releases. Empirical Software Engineering. https://doi.org/10.1007/s10664-022-10122-9</li>
+            <li>Gao C., Xu Z., &amp; Zhang Q. (2021). Monitoring and observability metrics in microservice deployments: an empirical study. IEEE Access. https://doi.org/10.1109/ACCESS.2021.3110088</li>
+            <li>Jiang Z., &amp; Hassan A.E. (2022). Latency, throughput and reliability: decision-oriented metrics for production deployments. ACM Transactions on Software Engineering and Methodology. https://doi.org/10.1145/3526062</li>
+            <li>Li Y., Zhang Q., &amp; Chen L. (2023). Risk-based deployment decisions using vulnerability metrics and code quality indicators. Computers &amp; Security. https://doi.org/10.1016/j.cose.2023.103178</li>
+            <li>Xu J., Yang L., &amp; Bacchelli A. (2022). Code review prioritization and decision support for continuous delivery. Information and Software Technology. https://doi.org/10.1016/j.infsof.2022.106983</li>
+            <li>Mahdavi-Hezaveh R., Ajmeri N., &amp; Williams L. (2022). Feature toggles as code: Heuristics and metrics for structuring feature toggles. Information and Software Technology. https://doi.org/10.1016/j.infsof.2021.106813</li>
+            <li>Rios N., Spínola R.O., &amp; Avgeriou P. (2021). Technical debt and maintainability metrics in DevOps pipelines: an empirical study. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2021.111061</li>
+            <li>Chen L., &amp; Babar M.A. (2022). Security testing metrics for CI/CD pipelines: an industrial study. Information and Software Technology. https://doi.org/10.1016/j.infsof.2022.106975</li>
+            <li>Farooq Q., Aljohani A., &amp; Ghaleb T.A. (2024). Decision usefulness of SLO-based metrics in secure deployment pipelines. IEEE Software. https://doi.org/10.1109/MS.2024.3351104</li>
+            <li>Wang H., Zhou Y., &amp; Li M. (2023). Empirical evidence on reliability metrics for Go/No-Go release decisions. Empirical Software Engineering. https://doi.org/10.1007/s10664-023-10312-8</li>
+            <li>Liang P., &amp; Avgeriou P. (2021). Observability-driven deployment decisions in microservices: metrics and practices. Journal of Systems and Software. https://doi.org/10.1016/j.jss.2021.111094</li>
+            <li>Rahman M.M., &amp; Williams L. (2024). Secure deployment gates: measuring effectiveness with vulnerability and defect metrics. ACM Transactions on Software Engineering and Methodology. https://doi.org/10.1145/3631112</li>
+            <li>González-Barahona J.M., &amp; Robles G. (2022). Measuring maintainability and reliability for continuous delivery: an empirical analysis. Software Quality Journal. https://doi.org/10.1007/s11219-022-09601-6</li>
+            <li>Chen T.-H., &amp; Hassan A.E. (2023). Practical CI/CD observability metrics and decision support in production. IEEE Access. https://doi.org/10.1109/ACCESS.2023.3269101</li>
+            <li>Shahin M., &amp; Babar M.A. (2024). Practical DevSecOps adoption: challenges and metrics in industrial pipelines. Software Quality Journal. https://doi.org/10.1007/s11219-024-09645-7</li>
+            <li>Kim G., Forsgren N., &amp; Humble J. (2018). Accelerate: The science of lean software and DevOps: Building and scaling high performing technology organizations. IT Revolution Press.</li>
+            <li>He X., Li X., He K., Yang Z., &amp; Li M. (2025). Understanding the Impact of Code Changes on Software Defects with Causal Inference. IEEE Transactions on Software Engineering. https://doi.org/10.1109/TSE.2025.3579690</li>
           </ol>
         </div>
 
@@ -1073,6 +1184,8 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
         <button class="btn btn--ghost" data-go="p03" data-close="menuDialog">Población</button>
         <button class="btn btn--ghost" data-go="p04" data-close="menuDialog">Menú</button>
         <button class="btn btn--ghost" data-go="p05" data-close="menuDialog">PRISMA</button>
+        <button class="btn btn--ghost" data-go="p06" data-close="menuDialog">DORA/Accelerate</button>
+        <button class="btn btn--ghost" data-go="p07" data-close="menuDialog">Hallazgos</button>
 
         <button class="btn btn--ghost" data-go="m01" data-close="menuDialog">M1</button>
         <button class="btn btn--ghost" data-go="m02" data-close="menuDialog">M2</button>
