@@ -1079,19 +1079,46 @@ AND (LIMIT-TO(LANGUAGE,"English") OR LIMIT-TO(LANGUAGE,"Spanish"))
 
       <!-- ====== P14 ====== -->
       <article class="screen" id="p14" data-title="Conclusión">
-        <div class="card">
-          <h2>Conclusión</h2>
-          <p>
-            Un despliegue seguro no se sostiene con métricas aisladas: requiere un tablero mínimo que conecte entrega (DORA), operación (SLO/SLI) y seguridad (gates).
-          </p>
-          <p>
-            La síntesis (n=30) muestra predominio de DevSecOps/seguridad (16/30) frente a calidad (7/30) e infra/observabilidad (6/30), lo que refuerza la necesidad
-            de integrar control de riesgo además de velocidad de entrega.
-          </p>
-          <p>
-            Recomendación: métricas accionables + umbrales + acción automática (bloquear/alertar/revisar), y ajuste por evidencia del servicio.
-          </p>
-        </div>
+     <div class="card">
+  <h2>Conclusión</h2>
+
+  <p>
+    Este ODC demuestra que un “despliegue seguro” no se logra optimizando una sola dimensión (velocidad, calidad o seguridad) por separado.
+    La evidencia sintetizada a partir de la revisión Scopus 2021–2026 (PRISMA: 89 registros → 30 estudios incluidos) sugiere que la utilidad
+    real para toma de decisiones aparece cuando las métricas están acopladas a reglas operables: umbrales, acciones y responsables (gates).
+    En otras palabras: medir sin regla produce reportes; medir con umbral produce control.
+  </p>
+
+  <p>
+    A nivel investigativo, la distribución por categorías refuerza el enfoque integrado: predominan los aportes en DevSecOps/seguridad
+    (16/30), seguidos por calidad de software y métricas (7/30) e infraestructura/observabilidad (6/30). Esta concentración indica que los
+    equipos están usando métricas principalmente para reducir riesgo (vulnerabilidades, cumplimiento de controles, seguridad del pipeline) y
+    sostener confiabilidad operativa (SLO/SLI, latencia p95, disponibilidad), más que para “medir por medir”. Por eso, un tablero mínimo debe
+    cubrir al menos tres capas: entrega (DORA), operación (SLO/SLI) y seguridad (gates).
+  </p>
+
+  <p>
+    En el componente técnico, el marco DORA/Accelerate aporta un núcleo de métricas de entrega comparables y orientadas a desempeño:
+    lead time for changes, deployment frequency, change failure rate y MTTR. Sin embargo, el hallazgo práctico es que estas métricas solo
+    sostienen despliegues seguros cuando se complementan con indicadores de riesgo y operación. Ejemplos: “vulnerabilidades críticas > 0”
+    (bloqueo), “pruebas fallidas” (bloqueo), “latencia p95 fuera de SLO” (mitigar/rollback), y “MTTR alto” (restringir cambios y priorizar
+    resiliencia). La decisión final no es velocidad; es velocidad con confiabilidad y riesgo controlado.
+  </p>
+
+  <p>
+    Como implicación, se recomienda implementar un tablero mínimo con métricas accionables por capa, automatizar su recolección y definir gates
+    consistentes (no negociables) para eventos de alto riesgo. Además, los umbrales deben calibrarse con línea base del servicio y revisarse
+    periódicamente para evitar fatiga de alertas y métricas “vanity”. En términos de mejora continua, el tablero debe cerrarse con un ciclo:
+    medir → decidir → ejecutar → verificar impacto (antes/después) → ajustar umbrales.
+  </p>
+
+  <p>
+    Limitaciones: este ODC se apoya en síntesis cualitativa y evidencia empírica publicada, pero no sustituye datos operativos de una
+    organización específica. Trabajo futuro: instrumentar un caso aplicado con mediciones antes/después (por ejemplo, variación de change
+    failure rate y MTTR tras introducir gates de seguridad), y documentar el impacto en decisiones Go/No-Go para robustecer la evidencia
+    comparativa.
+  </p>
+</div>
 
         <div class="nav-row">
           <button class="btn btn--ghost" data-go="p13">← Anterior</button>
